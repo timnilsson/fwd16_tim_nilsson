@@ -1,0 +1,57 @@
+@import url("normalize.css");
+
+body
+{
+    background: #888;
+    background-image: url(../img/clouds-background-light.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#top
+{
+    height: 150px;
+    padding: 1px;  
+    background-image: url(../img/viggen.png);
+    background-repeat: no-repeat;
+    background-position: top-left;
+}
+
+nav
+{
+    margin-left: 50%;
+}
+
+#container
+{
+    width: 960px;
+    margin: auto;
+}
+
+#sidebar
+{
+    float: left;
+    width: 150px;
+    height: 1131px;
+    border: 1px solid #000;
+}
+
+#content
+{
+    float: right;
+    width: 781px;
+    height: 1400px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #000;
+}
+
+footer
+{
+    clear: both;
+    height: 50px;
+    border: 1px solid #000;
+}
