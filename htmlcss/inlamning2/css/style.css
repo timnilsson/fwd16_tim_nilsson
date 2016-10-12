@@ -12,15 +12,38 @@ body
 #top
 {
     height: 150px;
-    padding: 1px;  
+    padding: 1px;
     background-image: url(../img/viggen.png);
     background-repeat: no-repeat;
     background-position: top-left;
 }
 
-nav
+#top header nav
 {
-    margin-left: 50%;
+    width: 50%;
+    margin: auto;
+}
+
+#top header nav ul
+{   
+    margin-top: 50px;
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+#top header nav ul li 
+{
+    display: inline;
+}
+
+#top header nav ul li a
+{
+    padding: 5px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #fa0;
 }
 
 #container
@@ -41,12 +64,73 @@ nav
 {
     float: right;
     width: 781px;
-    height: 1400px;
     margin-left: 5px;
     margin-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
     border: 1px solid #000;
+}
+
+h2, h3
+{
+    color: #fa0;
+}
+
+h2
+{
+    text-transform: uppercase;
+}
+
+h2::first-letter 
+{
+    font-size: 140%;
+}
+
+.bluetext
+{
+    color: #00f;
+}
+
+.redbold
+{
+    color: #f00;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.redthrough
+{
+    color: #f00;
+    text-decoration: line-through;
+}
+
+.effects
+{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    border-radius: 10px 30px 10px 30px;
+    background-color: #f00;
+}
+
+.effects p
+{
+    padding: 50px;
+    font-family: serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: -5px -5px 10px #000;
+    color: #beb730;
+}
+
+.yellowbox
+{
+    width: 85%;
+    margin: auto;
+    padding: 20px;
+    border-top: 3px solid #cc0;
+    border-bottom: 3px solid #cc0;  
+    background-color: #cca;
 }
 
 footer
