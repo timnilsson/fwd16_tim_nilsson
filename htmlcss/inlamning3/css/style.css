@@ -16,7 +16,7 @@ body
     display: flex;
 }
 
-.landlink
+#landing .landlink
 {
     display: flex;
     flex-direction: column;

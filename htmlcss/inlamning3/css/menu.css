@@ -1,0 +1,55 @@
+#menu
+{
+    background: rgba(0, 0, 0, 0.15);
+}
+
+#menu ul
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+#menu ul li
+{
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 0.5em 0;
+}
+
+#menu ul .social
+{
+    flex: 1 1 25%;
+}
+
+#menu ul a
+{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+@media all and (min-width: 500px){
+
+    #menu ul li
+    {
+        flex: 1 1 50%;
+    }
+
+}
+
+@media all and (min-width: 1000px){
+
+    #menu ul li
+    {
+        flex: 3;
+    }
+
+    #menu ul .social
+    {
+        flex: 1;
+    }
+
+}
