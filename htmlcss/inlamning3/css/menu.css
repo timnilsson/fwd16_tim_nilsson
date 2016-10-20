@@ -1,6 +1,21 @@
+#menutoggle
+{
+    display: none;
+}
+
 #menu
 {
-    background: rgba(0, 0, 0, 0.15);
+    display: none;
+}
+
+#menutoggle:checked ~ #menu
+{
+    display: block;
+}
+
+label .fa-bars
+{
+    font-size: 2em;
 }
 
 #menu ul
@@ -32,6 +47,16 @@
 }
 
 @media all and (min-width: 500px){
+
+    label
+    {
+        display: none;
+    }
+
+    #menu
+    {
+        display: block;
+    }
 
     #menu ul li
     {

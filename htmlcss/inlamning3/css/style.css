@@ -26,6 +26,15 @@ body
     color: #ddd;
 }
 
+header
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.15);
+}
+
 img
 {
     max-width: 100%;
