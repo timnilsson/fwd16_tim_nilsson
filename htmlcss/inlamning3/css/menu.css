@@ -21,19 +21,23 @@ label .fa-bars
 #menu ul
 {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-flow: column nowrap;
     list-style: none;
 }
 
 #menu ul li
 {
-    flex: 1 1 100%;
     text-align: center;
     padding: 0.5em 0;
 }
 
 #menu ul .social
+{
+    display: flex;
+	flex-flow: row nowrap;
+}
+
+#menu ul .social li
 {
     flex: 1 1 25%;
 }
@@ -58,10 +62,20 @@ label .fa-bars
         display: block;
     }
 
+    #menu ul
+	{
+		flex-flow: row wrap;
+	}
+
     #menu ul li
     {
         flex: 1 1 50%;
     }
+
+    #menu ul .social
+	{
+		flex: 1 1 100%;
+	}
 
 }
 
@@ -69,7 +83,7 @@ label .fa-bars
 
     #menu ul li
     {
-        flex: 3;
+        flex: 1;
     }
 
     #menu ul .social
