@@ -25,3 +25,9 @@ body
     text-decoration: none;
     color: #ddd;
 }
+
+img
+{
+    max-width: 100%;
+    height: auto;
+}
