@@ -5,21 +5,37 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial scale=1.0">
         <link rel="stylesheet" href="css/style.css">
+        <!-- Link to make sure the font-icons can be read properly -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     </head>
 
     <body>
         <header>
+            <!-- Creates the possibility of toggling the whole menu on/off -->
             <input type="checkbox" id="menutoggle">
-            <label for="menutoggle"><i class="fa fa-bars"></i></label>
+            <label for="menutoggle" class="labelmenutoggle"><i class="fa fa-bars"></i></label>
+            <!-- Wrapper for the whole menu -->
             <nav id="menu">
                 <ul>
                     <li><a href="">Item 01</a></li>
                     <li><a href="">Item 02</a></li>
                     <li><a href="">Item 03</a></li>
-                    <li><a href="">Item 04</a></li>
+                    <!-- Creating the dropdown-menu -->
+                    <li class="dropdown">
+                        <!-- Creates the possibility of toggling the dropdown menu -->
+                        <input type="checkbox" id="menudrop">
+                        <label for="menudrop" class="drop">
+                            Item 04 &#x25BC
+                        </label>
+                        <!-- The actual content inside the dropdown part -->
+                        <ul class="dropdown-content">
+                            <li><a href="">dropItem01</a></li>
+                            <li><a href="">dropItem02</a></li>
+                        </ul>
+                    </li>
                     <li><a href="">Item 05</a></li>
                     <li><a href="">Item 06</a></li>
+                    <!-- Inside menu that handles the icons only -->
                     <ul class="social">
 						<li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 						<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -30,10 +46,13 @@
             </nav>
         </header>
         
+        <!-- Wrapper for all of the "whisky cards" -->
         <div id="container">
 
+            <!-- The singular card -->
             <div class="card">
                 <h2>Whisky</h2>
+                <!-- Div containing the owner/author information -->
                 <div class="nameinfo">
                     <span>
                         <i class="fa fa-tag" aria-hidden="true"></i>&#32;Single Malt
@@ -42,6 +61,7 @@
                         <i class="fa fa-user" aria-hidden="true"></i>&#32;Sohail
                     </span>
                 </div>
+                <!-- Div containing the image, the coherent text and the button -->
                 <div class="productcontent">
                     <img src="img/japanese-whisky-hibiki.jpg" alt="whiskey">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, id laborum, odio quas aspernatur error ipsa, veniam vel, aperiam rem soluta et sed odit quasi deserunt totam impedit eaque modi.</p>

@@ -1,25 +1,25 @@
 #menutoggle
-{
+{   /* Hiding the checkbox-symbol that handles the menu toggling */
     display: none;
 }
 
 #menu
-{
+{   /* Hiding the whole menu wrapper by default */
     display: none;
 }
 
 #menutoggle:checked ~ #menu
-{
+{   /* If the label has been checked/clicked, show the menu */
     display: block;
 }
 
 label .fa-bars
-{
+{   
     font-size: 2em;
 }
 
 #menu ul
-{
+{   /* The menu shows as column by default */
     display: flex;
     flex-flow: column nowrap;
     list-style: none;
@@ -32,55 +32,77 @@ label .fa-bars
 }
 
 #menu ul .social
-{
+{   /* Change the inner menu to show its content as a row */
     display: flex;
 	flex-flow: row nowrap;
 }
 
 #menu ul .social li
-{
+{   /* Give the icons 25% width so they can fit in one row */
     flex: 1 1 25%;
 }
 
 #menu ul a
-{
+{   
     font-size: 1.5em;
     font-weight: bold;
     color: #000;
     text-decoration: none;
 }
 
-@media all and (min-width: 500px){
+#menu ul .dropdown #menudrop
+{   /* Hiding the checkbox-symbol for the dropdown menu */
+    display: none;
+}
 
-    label
-    {
+#menu ul .dropdown .drop 
+{   /* Styling the dropdown label */
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #000;
+}
+
+#menu ul .dropdown .dropdown-content
+{   /* Hiding the dropdown content by default */
+    display: none;
+}
+
+#menu ul #menudrop:checked ~ .dropdown-content
+{  /* If the dropdown label is checked/clicked, show the dropdown content */
+    display: block;
+}
+
+@media all and (min-width: 500px){
+    /* Settings that apply if the screen width goes above 500 pixels */
+    .labelmenutoggle
+    {   /* Hiding the symbol to open/close the menu */
         display: none;
     }
 
     #menu
-    {
+    {   /* Shows the whole menu wrapper as a block */
         display: block;
     }
 
     #menu ul
-	{
+	{   /* Hiding the checkbox-symbol for the dropdown menu */
 		flex-flow: row wrap;
 	}
 
     #menu ul li
-    {
+    {   /* The general items in the main menu having a width of half of the container width */
         flex: 1 1 50%;
     }
 
     #menu ul .social
-	{
+	{   /* The flex-item cointaing the social icons having its full width  */
 		flex: 1 1 100%;
 	}
 
 }
 
 @media all and (min-width: 1000px){
-
+    /* Settings that apply if the screen width goes above 1000 pixels */
     #menu ul li
     {
         flex: 1;
@@ -89,6 +111,11 @@ label .fa-bars
     #menu ul .social
     {
         flex: 1;
+    }
+
+    #menu .dropdown:hover .dropdown-content
+    {   /* Also show the dropdown content when hovering over the label */
+        display: block;
     }
 
 }

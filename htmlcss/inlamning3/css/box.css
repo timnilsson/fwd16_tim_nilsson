@@ -1,5 +1,5 @@
 #container
-{
+{   /* Configurating how the "card-wrapper" should handle its cards */
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
@@ -8,17 +8,17 @@
 }
 
 #container .card
-{
+{   /* Configurating the individual cards */
     display: flex;
     flex-flow: column nowrap;
     box-sizing: border-box;
     width: 100%;
-    background-color: seagreen;
-    opacity: 0.5;
-    border: 1px solid #fff;
     margin: 0 auto 10px;
     padding: 5px;
+    opacity: 0.5;
+    border: 1px solid #fff;
     color: #fff;
+    background-color: seagreen;
 }
 
 #container .card h2
@@ -27,33 +27,38 @@
 }
 
 #container .card .nameinfo
-{
+{   /* Configurating the owner/author wrapper */
     display: flex;
     justify-content: space-between;
     margin: 5px 0;
 }
 
 #container .card .productcontent
-{   
+{   /* Configurating the div for the main content of each card */
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
     height: 100%;
 }
 
+#container .card .productcontent p
+{   
+    flex: 1;
+}
+
 #container .card .productcontent button
 {
-    background-color: gold;
-    border: none; 
+    padding: 10px;
     color: seagreen;
     font-weight: bold;
-    padding: 10px;
+    border: none; 
+    background-color: gold;
 }
 
 @media all and (min-width: 600px){
-
+    /* Settings that apply if the screen goes above 600 pixels */
     #container
-    {
+    {   /* Make the card wrapper show as a row instead of column */
         flex-flow: row wrap;
         max-width: 1000px;
     }
