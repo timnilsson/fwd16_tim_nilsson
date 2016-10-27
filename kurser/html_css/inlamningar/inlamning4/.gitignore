@@ -38,5 +38,6 @@ jspm_packages
 
 dist
 node_modules
+.DS_Store
 *.css.map
 dist/**/*

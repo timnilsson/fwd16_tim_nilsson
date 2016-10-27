@@ -1,0 +1,132 @@
+@import "utilities/variables";
+@import "modules/mixins";
+header
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    text-align: center;
+    background: rgba(map-get($colors, backgroundstandard), 0.15);
+
+    #menutoggle
+    {   /* Hiding the checkbox-symbol that handles the menu toggling */
+        display: none;
+
+        &:checked ~ #menu
+        {   /* If the label has been checked/clicked, show the menu */
+            display: block;
+        }
+    }
+
+    .labelmenutoggle
+    {
+        .fa-bars
+        {
+            font-size: 2em;
+            font-weight: normal;
+            color: map-get($colors, linkcolor);
+        }
+
+        @media all and (min-width: map-get($breakpoints, small)){
+            display: none;
+        }
+    }
+
+    #menu
+    {   /* Hiding the whole menu wrapper by default */
+        display: none;
+
+        ul
+        {
+            /* The menu shows as column by default */
+            display: flex;
+            flex-flow: column nowrap;
+            list-style: none;
+
+            li
+            {
+                text-align: center;
+                padding: 0.5em 0;
+
+                @include breakpoint(small){
+                    flex: 1 1 50%;
+                }
+
+                @include breakpoint(large){
+                    flex: 1;
+                }
+            }
+
+            .social
+            {
+                /* Change the inner menu to show its content as a row */
+                display: flex;
+                flex-flow: row nowrap;
+
+                li
+                {
+                    /* Give the icons 25% width so they can fit in one row */
+                    flex: 1 1 25%;
+                }
+
+                @include breakpoint(small){
+                    flex: 1 1 100%;
+                    order: 1;
+                }
+
+                @include breakpoint(large){
+                    flex: 1;
+                }
+            }
+
+            a
+            {
+                font-size: 1.5em;
+                font-weight: bold;
+                color: map-get($colors, linkcolor);
+                text-decoration: none;
+            }
+
+            .dropdown
+            {
+                
+                #menudrop
+                {
+                    /* Hiding the checkbox-symbol for the dropdown menu */
+                    display: none;
+
+                    &:checked ~ .dropdown-content
+                    {  /* If the dropdown label is checked/clicked, show the dropdown content */
+                        display: block;
+                    }
+                }
+
+                .drop
+                {
+                    /* Styling the dropdown label */
+                    @extend a;
+                }
+
+                .dropdown-content
+                {
+                    /* Hiding the dropdown content by default */
+                    display: none;
+                }
+
+                &:hover .dropdown-content
+                {
+                    @include breakpoint(large){
+                        display: block;
+                    }
+                }
+            }
+            @include breakpoint(small){
+            flex-flow: row wrap;
+        }
+        }
+        @include breakpoint(small){
+            display: block;
+        }
+    }   
+
+}

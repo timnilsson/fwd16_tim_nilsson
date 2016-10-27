@@ -1,0 +1,79 @@
+@import "utilities/variables";
+@import "modules/mixins";
+
+%basepadding
+{
+    padding: 5px;
+}
+
+#container
+{   /* Configurating how the "card-wrapper" should handle its cards */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    margin: 10px auto 0;
+    max-width: 500px;
+
+    .card
+    {   /* Configurating the individual cards */
+        @extend %basepadding;
+        display: flex;
+        flex-flow: column nowrap;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0 auto 10px;
+        opacity: 0.5;
+        border: 1px solid map-get($colors, bordercolor);
+        color: map-get($colors, cardtextcolor);
+        background-color: map-get($colors, cardbackgroundcolor);
+
+        h2
+        {
+            margin: 0;
+        }
+
+        .nameinfo
+        {   /* Configurating the owner/author wrapper */
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+
+        .productcontent
+        {   /* Configurating the div for the main content of each card */
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            height: 100%;
+
+            p
+            {   
+                flex: 1;
+            }
+
+            button
+            {
+                @extend %basepadding;
+                color: map-get($colors, buttontextcolor);
+                font-weight: bold;
+                border: none; 
+                background-color: map-get($colors, buttonbackgroundcolor);
+            }
+        }
+
+        @include breakpoint(medium){
+            width: 48%;
+
+            &:last-child
+            {
+                width: 98%;
+            }
+        }
+    }
+
+    @include breakpoint(medium){
+        /* Make the card wrapper show as a row instead of column */
+        flex-flow: row wrap;
+        max-width: 1000px;
+    }
+}

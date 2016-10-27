@@ -1,0 +1,8 @@
+@import "../utilities/variables";
+@mixin breakpoint($breakvalue)
+{
+    @media all and(min-width: map-get($breakpoints, $breakvalue))
+    {
+        @content
+    }
+}
