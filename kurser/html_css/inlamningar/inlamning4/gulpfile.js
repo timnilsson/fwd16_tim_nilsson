@@ -8,6 +8,7 @@ var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
 var cssnano = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
+var notify = require('gulp-notify');
 var cache = require('gulp-cache');
 var del = require('del');
 var runSequence = require('run-sequence');
@@ -21,7 +22,8 @@ var runSequence = require('run-sequence');
 gulp.task('browserSync', function() {
   browserSync({
     server: {
-      baseDir: 'app'
+      baseDir: 'app', 
+      index: 'index.html'
     }
   })
 })
@@ -32,6 +34,7 @@ gulp.task('sass', function() {
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('app/css')) // Outputs it in the css folder
+    
     .pipe(browserSync.reload({ // Reloading with Browser Sync
       stream: true
     }));
@@ -55,16 +58,19 @@ gulp.task('useref', function() {
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist'));
+    
 });
 
 // Optimizing Images 
 gulp.task('images', function() {
   return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
     // Caching images that ran through imagemin
-    .pipe(cache(imagemin({
-      interlaced: true,
+   .pipe(cache(imagemin({
+      optimizationLevel: 5, progressive: true, interlaced: true
     })))
     .pipe(gulp.dest('dist/images'))
+    .pipe(notify({ message: 'Images task complete' }));
+
 });
 
 // Copying fonts 

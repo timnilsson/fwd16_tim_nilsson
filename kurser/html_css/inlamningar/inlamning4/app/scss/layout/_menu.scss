@@ -1,12 +1,10 @@
-@import "utilities/variables";
-@import "modules/mixins";
 header
 {
     display: flex;
     flex-flow: column nowrap;
     align-content: center;
     text-align: center;
-    background: rgba(map-get($colors, backgroundstandard), 0.15);
+    background: rgba(map-get($colors, backgroundstandard), 0.2);
 
     #menutoggle
     {   /* Hiding the checkbox-symbol that handles the menu toggling */
@@ -111,6 +109,28 @@ header
                 {
                     /* Hiding the dropdown content by default */
                     display: none;
+
+                    .secdrop
+                    {
+                        
+                        @extend a;
+                        .secdropcon
+                        {
+                            display: flex;
+                            flex-flow: column nowrap;
+                            font-size: 0.5em;
+                            @include breakpoint(small){
+                                flex-flow: row wrap;
+                                
+                            }
+                            li
+                            {
+                                @include breakpoint(small){
+                                    flex: 1 1 50%;
+                                }
+                            }
+                        }
+                    }
                 }
 
                 &:hover .dropdown-content

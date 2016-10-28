@@ -1,9 +1,8 @@
 /* Importing the other css files needed */
-@import "utilities/variables";
-@import "modules/mixins";
-@import "base/normalize";
-@import "menu";
-@import "box";
+@import "utilities/utilities_index";
+@import "modules/modules_index";
+@import "layout/layout_index";
+@import "base/base_index";
 
 body
 {   /* Handle how the background-image should be treated */
