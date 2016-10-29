@@ -1,4 +1,4 @@
-@import "../utilities/variables";
+// Mixin that prints media breakpoint query based on the input value
 @mixin breakpoint($breakvalue)
 {
     @media all and(min-width: map-get($breakpoints, $breakvalue))

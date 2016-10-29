@@ -1,15 +1,24 @@
+// Declaring variables
+$standardpadding: 5px;
+$standardmargin: 10px;
+$contwidthsmall: 500px;
+$contwidthbig: 1000px;
+
+// Sass map over various colors
 $colors:
 (
-    standtextcolor: #fff,
-    cardtextcolor: #ddd,
-    linkcolor: #000,
-    bordercolor: #fff,
-    cardbackgroundcolor: seagreen,
-    buttontextcolor: seagreen,
-    buttonbackgroundcolor: gold,
-    backgroundstandard: #000
+    standardtext: #fff,
+    border: #fff,
+    link: #000,
+    backgroundstandard: #000,
+    cardstandard: #ddd,
+    cardhead: #000,
+    cardbackground: seagreen,
+    buttontext: seagreen,
+    buttonbackground: gold
 );
 
+// Sass map over various breakpoints
 $breakpoints:
 (
     small: 500px,

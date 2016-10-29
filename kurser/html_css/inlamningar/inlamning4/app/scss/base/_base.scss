@@ -1,0 +1,31 @@
+body
+{   /* Handle how the background-image should be treated */
+    background-image: url(../images/o-SCOTLAND-facebook1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+img
+{   /* Make sure the image has the best possible dimensions */
+    max-width: 100%;
+    height: auto;
+}
+
+header
+{   /* How the header should be setup */
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center; 
+    text-align: center;
+    background: rgba(map-get($colors, backgroundstandard), 0.2); // Get color from sass map
+}
+
+a
+{   /* Giving a default style to links */
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: map-get($colors, link);
+    text-decoration: none;
+}

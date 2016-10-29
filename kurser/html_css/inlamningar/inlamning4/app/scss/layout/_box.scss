@@ -1,28 +1,23 @@
-%basepadding
-{
-    padding: 5px;
-}
-
 #container
 {   /* Configurating how the "card-wrapper" should handle its cards */
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
-    margin: 10px auto 0;
-    max-width: 500px;
+    margin: $standardmargin auto 0;
+    max-width: $contwidthsmall;
 
     .card
     {   /* Configurating the individual cards */
-        @extend %basepadding;
         display: flex;
         flex-flow: column nowrap;
         box-sizing: border-box;
         width: 100%;
-        margin: 0 auto 10px;
+        margin: 0 auto $standardmargin;
+        padding: $standardpadding;
         opacity: 0.5;
-        border: 1px solid map-get($colors, bordercolor);
-        color: map-get($colors, cardtextcolor);
-        background-color: map-get($colors, cardbackgroundcolor);
+        border: 1px solid map-get($colors, border); // Get color from sass map
+        color: map-get($colors, cardstandard);
+        background-color: map-get($colors, cardbackground);
 
         h2
         {
@@ -33,7 +28,7 @@
         {   /* Configurating the owner/author wrapper */
             display: flex;
             justify-content: space-between;
-            margin: 5px 0;
+            margin: $standardmargin 0;
         }
 
         .productcontent
@@ -50,46 +45,46 @@
 
             button
             {
-                @extend %basepadding;
-                color: map-get($colors, buttontextcolor);
+                padding: $standardpadding;
+                color: map-get($colors, buttontext);
                 font-weight: bold;
                 border: none; 
-                background-color: map-get($colors, buttonbackgroundcolor);
+                background-color: map-get($colors, buttonbackground);
             }
         }
         
-        @for $i from 1 through 5{
-            &:nth-child(#{$i})
+        @for $i from 1 through 10
+        {
+            $newColor: #005;
+            // If looped more than 5 times, change value on newColor
+            @if $i > 5 
             {
+                $newColor: map-get($colors, cardhead)+#500;
+            }
+
+            // Print new classes with special designed colors
+            &:nth-child(#{$i})
+            {   /* Change head-color on current card */
                 h2
                 {
-                    color: #000;
+                    color: $newColor;
                 }
 
                 .nameinfo
                 {
-                    color: #000;
-                }
-            }
-        }
-        
-        @for $i from 6 through 10{
-            &:nth-child(#{$i})
-            {
-                h2
-                {
-                    color: #0cc;
-                }
-
-                .nameinfo
-                {
-                    color: #0cc;
+                    color: $newColor;
                 }
             }
         }
 
-        @include breakpoint(medium){
+        @include breakpoint(medium) // Add mixincontent for the breakpoint
+        {   /* Change card size when screen width goes above 600 pixels */
             width: 48%;
+
+            &:nth-child(9)
+            {
+                width: 98%;
+            }
 
             &:last-child
             {
@@ -98,11 +93,9 @@
         }
     }
 
-    
-
-    @include breakpoint(medium){
-        /* Make the card wrapper show as a row instead of column */
+    @include breakpoint(medium)
+    {   /* Make the card wrapper show as a row instead of column */
         flex-flow: row wrap;
-        max-width: 1000px;
+        max-width: $contwidthbig;
     }
 }

@@ -1,37 +1,5 @@
-/* Importing the other css files needed */
+// Import all index files
 @import "utilities/utilities_index";
 @import "modules/modules_index";
-@import "layout/layout_index";
 @import "base/base_index";
-
-body
-{   /* Handle how the background-image should be treated */
-    background-image: url(../images/o-SCOTLAND-facebook1.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
-#landing
-{
-    height: 100vh;
-    display: flex;
-
-    .landlink
-    {
-      /* Handle how the background-image should be treated */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: auto;
-      text-decoration: none;
-      color: map-get($colors, standtextcolor);
-    }
-}
-
-img
-{   /* Make sure the image has the best possible dimensions */
-    max-width: 100%;
-    height: auto;
-}
-
+@import "layout/layout_index";

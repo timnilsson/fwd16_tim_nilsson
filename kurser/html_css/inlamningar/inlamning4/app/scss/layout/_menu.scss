@@ -1,152 +1,233 @@
-header
+%togglebase // Standard class for styling menu toggle icons
 {
-    display: flex;
-    flex-flow: column nowrap;
-    align-content: center;
-    text-align: center;
-    background: rgba(map-get($colors, backgroundstandard), 0.2);
+    font-size: 2em;
+    font-weight: normal;
+    color: map-get($colors, link);
+}
 
-    #menutoggle
-    {   /* Hiding the checkbox-symbol that handles the menu toggling */
-        display: none;
-
-        &:checked ~ #menu
-        {   /* If the label has been checked/clicked, show the menu */
-            display: block;
-        }
+.labelmenutoggle
+{   /* Styling the icon that opens the menu */
+    .fa-bars
+    {
+        @extend %togglebase;
     }
 
-    .labelmenutoggle
+    @include breakpoint(small)
     {
-        .fa-bars
-        {
-            font-size: 2em;
-            font-weight: normal;
-            color: map-get($colors, linkcolor);
+        display: none;
+    }
+}
+
+.labelmenucross
+{   /* Styling the icon that closes the menu */
+    display: none;
+
+    .fa-times
+    {
+        @extend %togglebase;
+    }
+
+    @include breakpoint(small)
+    {
+        display: none;
+    }
+}
+
+#menutoggle
+{   /* Hiding the checkbox-symbol that handles the menu toggling */
+    display: none;
+
+    &:checked ~
+    {   /* If the label has been checked/clicked */
+        #menu
+        {   /* Open the menu */
+            display: block;
         }
 
-        @media all and (min-width: map-get($breakpoints, small)){
+        .labelmenucross
+        {   /* Display the icon that closes the menu */
+            display: block;
+
+            @include breakpoint(small)
+            {
+                display: none;
+            }
+        }
+
+        .labelmenutoggle
+        {   /* Hide the icon that opens the menu */
             display: none;
         }
     }
+}
 
-    #menu
-    {   /* Hiding the whole menu wrapper by default */
-        display: none;
+#menu
+{   /* Hiding the whole menu wrapper by default */
+    display: none;
 
-        ul
+    ul
+    {   /* The menu shows as flex column by default */
+        display: flex;
+        flex-flow: column nowrap;
+        list-style: none;
+
+        li
         {
-            /* The menu shows as column by default */
-            display: flex;
-            flex-flow: column nowrap;
-            list-style: none;
+            text-align: center;
+            padding: 0.5em 0;
 
-            li
+            @include breakpoint(small)
             {
-                text-align: center;
-                padding: 0.5em 0;
+                flex: 1 1 50%;
 
-                @include breakpoint(small){
-                    flex: 1 1 50%;
-                }
-
-                @include breakpoint(large){
-                    flex: 1;
+                &:hover
+                {
+                    background: rgba(map-get($colors, backgroundstandard), 0.1);
                 }
             }
 
-            .social
+            @include breakpoint(large)
             {
-                /* Change the inner menu to show its content as a row */
-                display: flex;
-                flex-flow: row nowrap;
+                flex: 1;
+            }
+        }
+
+        .social
+        {   /* Change the inner menu to show its content as a row */
+            display: flex;
+            flex-flow: row nowrap;
+
+            li
+            {   /* Give the icons 25% width so they can fit in one row */
+                flex: 1 1 25%;
+            }
+
+            @include breakpoint(small)
+            {
+                flex: 1 1 100%;
+                order: 1;
+            }
+
+            @include breakpoint(large)
+            {
+                flex: 1;
+            }
+        }
+
+        .dropdown
+        {
+                
+            #menudrop
+            {   /* Hiding the checkbox-symbol for the dropdown menu */
+                display: none;
+
+                &:checked ~ .dropdown-content
+                {   /* If the dropdown label is checked/clicked, show the dropdown content */
+                    display: block;
+                }
+            }
+
+            .drop
+            {   /* Styling the dropdown label */
+                @extend a;
+            }
+
+            .dropdown-content
+            {   /* Hiding the dropdown content by default */
+                display: none;
+                font-size: 0.9em;
 
                 li
                 {
-                    /* Give the icons 25% width so they can fit in one row */
-                    flex: 1 1 25%;
-                }
-
-                @include breakpoint(small){
-                    flex: 1 1 100%;
-                    order: 1;
-                }
-
-                @include breakpoint(large){
-                    flex: 1;
-                }
-            }
-
-            a
-            {
-                font-size: 1.5em;
-                font-weight: bold;
-                color: map-get($colors, linkcolor);
-                text-decoration: none;
-            }
-
-            .dropdown
-            {
-                
-                #menudrop
-                {
-                    /* Hiding the checkbox-symbol for the dropdown menu */
-                    display: none;
-
-                    &:checked ~ .dropdown-content
-                    {  /* If the dropdown label is checked/clicked, show the dropdown content */
-                        display: block;
+                    a
+                    {
+                        color: map-get($colors, link)+#223;
                     }
                 }
 
-                .drop
-                {
-                    /* Styling the dropdown label */
+                .secdrop
+                {     
                     @extend a;
-                }
+                    color: map-get($colors, link)+#223;
 
-                .dropdown-content
-                {
-                    /* Hiding the dropdown content by default */
-                    display: none;
+                    #secmenudrop
+                    {   /* Hiding the checkbox-symbol for the dropdown menu */
+                        display: none;
 
-                    .secdrop
-                    {
-                        
-                        @extend a;
-                        .secdropcon
-                        {
-                            display: flex;
-                            flex-flow: column nowrap;
-                            font-size: 0.5em;
-                            @include breakpoint(small){
-                                flex-flow: row wrap;
-                                
-                            }
-                            li
+                        &:checked ~ .secdropcon
+                        {  /* If the dropdown label is checked/clicked, show the dropdown content */
+                            display: block;
+
+                            @include breakpoint(small)
                             {
-                                @include breakpoint(small){
-                                    flex: 1 1 50%;
-                                }
+                                display: flex;
+                                flex-flow: row wrap;                           
+                            }
+                        } 
+                    }
+
+                    .secdroplabel
+                    {   /* Styling the second dropdown label */
+                        color: map-get($colors, link)+#223;
+                        display: block;
+                        padding: 0.5em 0;
+
+                        @include breakpoint(small)
+                        {
+                            &:hover
+                            {
+                                background: rgba(map-get($colors, backgroundstandard), 0.1);
                             }
                         }
                     }
-                }
 
-                &:hover .dropdown-content
+                    .secdropcon
+                    {   /* Styling the content for the second dropdown */
+                        display: none;
+                        font-size: 0.55em;
+                        
+                        li
+                        {
+                            a
+                            {
+                                color: map-get($colors, link)+#334;
+                            }
+
+                            @include breakpoint(small)
+                            {
+                                flex: 1 1 50%;
+                            }
+                        }
+
+                        @include breakpoint(large)
+                        {   /* Show dropdown content as block when screen width goes above 1000 pixels */
+                            display: block;
+                        }
+
+                    }    
+                }
+            }
+
+            &:hover
+            {   /* Show dropdown content when hovering the list item */
+                .dropdown-content
                 {
-                    @include breakpoint(large){
+                    @include breakpoint(large)
+                    {
                         display: block;
                     }
                 }
+
             }
-            @include breakpoint(small){
+        }
+
+        @include breakpoint(small)
+        {   /* Show menu as a row when screen width goes above 500 pixels */
             flex-flow: row wrap;
         }
-        }
-        @include breakpoint(small){
-            display: block;
-        }
-    }   
-
-}
+    }
+    @include breakpoint(small)
+    {   /* Show whole menu when screen width goes above 500 pixels */
+        display: block;
+    }
+}   

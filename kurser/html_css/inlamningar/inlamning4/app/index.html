@@ -6,21 +6,23 @@
         <meta name="viewport" content="width=device-width, initial scale=1.0">
         <!--build:css css/styles.min.css-->
         <link rel="stylesheet" href="css/styles.css">
+        <!--endbuild-->
         <!-- Link to make sure the font-icons can be read properly -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <!--endbuild-->
+        
     </head>
 
     <body>
-      <!--build:js js/main.min.js -->
-  <script src="js/lib/a-library.js"></script>
-  <script src="js/lib/another-library.js"></script>
-  <script src="js/main.js"></script>
-  <!-- endbuild -->
+        <!--build:js js/main.min.js -->
+        <script src="js/lib/a-library.js"></script>
+        <script src="js/lib/another-library.js"></script>
+        <script src="js/main.js"></script>
+        <!-- endbuild -->
         <header>
             <!-- Creates the possibility of toggling the whole menu on/off -->
             <input type="checkbox" id="menutoggle">
             <label for="menutoggle" class="labelmenutoggle"><i class="fa fa-bars"></i></label>
+            <label for="menutoggle" class="labelmenucross"><i class="fa fa-times" aria-hidden="true"></i></label>
             <!-- Wrapper for the whole menu -->
             <nav id="menu">
                 <ul>
@@ -44,7 +46,12 @@
                         <!-- The actual content inside the dropdown part -->
                         <ul class="dropdown-content">
                             <li><a href="">dropItem01</a></li>
-                            <li class="secdrop">dropItem02
+                            <!-- A second dropdown -->
+                            <li class="secdrop">
+                                <input type="checkbox" id="secmenudrop">
+                                <label for="secmenudrop" class="secdroplabel">
+                                    dropItem02 &#x25BC
+                                </label>
                                 <ul class="secdropcon">
                                     <li><a href="">secDropItem</a></li>
                                     <li><a href="">secDropItem</a></li>
@@ -61,7 +68,7 @@
             </nav>
         </header>
         
-        <!-- Wrapper for all of the "whisky cards" -->
+        <!-- Wrapper for all of the "whiskey cards" -->
         <div id="container">
 
             <!-- The singular card -->
@@ -163,7 +170,7 @@
                     </span>
                 </div>
                 <div class="productcontent">
-                    <img src="images/whisky-banner.jpg" alt="whiskey">
+                    <img src="images/japanese-whisky-hibiki.jpg" alt="whiskey">
                     <p>Some promotion</p>
                     <button type="button">See More</button>
                 </div>
@@ -197,7 +204,7 @@
                     </span>
                 </div>
                 <div class="productcontent">
-                    <img src="images/whisky-banner.jpg" alt="whiskey">
+                    <img src="images/image.jpg" alt="whiskey">
                     <p>Some promotion</p>
                     <button type="button">See More</button>
                 </div>
@@ -214,7 +221,7 @@
                     </span>
                 </div>
                 <div class="productcontent">
-                    <img src="images/whisky-banner.jpg" alt="whiskey">
+                    <img src="images/big.jpg" alt="whiskey">
                     <p>Some promotion</p>
                     <button type="button">See More</button>
                 </div>

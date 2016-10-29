@@ -1,0 +1,14 @@
+#landing
+{
+    height: 100vh;
+    display: flex;
+    .landlink
+    { /* Placing the content at the center of the page */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: auto;
+      text-decoration: none;
+      color: map-get($colors, standardtext); // Get color from sass map
+    }
+}
