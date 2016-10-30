@@ -79,17 +79,8 @@
 
         @include breakpoint(medium) // Add mixincontent for the breakpoint
         {   /* Change card size when screen width goes above 600 pixels */
-            width: 48%;
-
-            &:nth-child(9)
-            {
-                width: 98%;
-            }
-
-            &:last-child
-            {
-                width: 98%;
-            }
+            width: 48%;   
+            @include cardgrowth();
         }
     }
 

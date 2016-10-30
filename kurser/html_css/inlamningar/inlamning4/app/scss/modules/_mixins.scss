@@ -6,3 +6,12 @@
         @content
     }
 }
+
+// Mixin that makes every fifth card bigger
+@mixin cardgrowth()
+{
+    &:nth-child(5n)
+    {
+        width: 98%;
+    }
+}
