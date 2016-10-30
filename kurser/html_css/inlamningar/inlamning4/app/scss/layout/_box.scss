@@ -55,7 +55,7 @@
         
         @for $i from 1 through 10
         {
-            $newColor: #005;
+            $newColor: map-get($colors, cardhead)+#005;
             // If looped more than 5 times, change value on newColor
             @if $i > 5 
             {
