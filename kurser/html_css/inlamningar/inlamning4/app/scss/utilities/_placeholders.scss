@@ -1,0 +1,6 @@
+%togglebase // Standard class for styling menu toggle icons
+{
+    font-size: 2em;
+    font-weight: normal;
+    color: map-get($colors, link);
+}
