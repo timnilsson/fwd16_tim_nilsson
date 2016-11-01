@@ -1,0 +1,38 @@
+#menutoggle
+{
+    display: none;
+}
+
+#menutoggle:checked 
+{
+    ~ #menu
+    {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    ~ .togglebars
+    {
+        display: none;
+    }
+
+    ~ .togglecross
+    {
+        display: block;
+    }
+}
+
+.togglecross
+{
+    display: none;
+}
+
+.togglebars, .togglecross
+{
+    margin-left: 40%;
+    :after 
+    {
+        content: "Menu";
+        font-family: arial;
+    }
+}

@@ -1,0 +1,26 @@
+#menu
+{
+    display: none;
+    border-radius: 5px;
+    ul
+    {
+        display: flex;
+        flex-flow: column wrap;
+        flex: 5;
+        
+    }
+
+    .social
+    {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-around;
+        flex: 1;
+        text-align: center;
+        background-color: #3dd;
+    }
+    a
+    {
+        display: block;
+    }
+}

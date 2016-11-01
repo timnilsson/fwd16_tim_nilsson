@@ -1,0 +1,29 @@
+body
+{
+    padding: 0 2%;
+}
+
+*, *:after, *:before
+{
+    box-sizing: border-box;
+}
+
+header
+{
+    font-size: 2em;
+}
+
+ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #ddd;
+}
+
+a
+{
+    padding: 5px;
+    text-decoration: none;  
+    color: #000;
+}
