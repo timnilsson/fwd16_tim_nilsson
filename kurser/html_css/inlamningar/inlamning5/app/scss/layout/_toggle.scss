@@ -20,6 +20,13 @@
     {
         display: block;
     }
+    @media all and(min-width: map-get($breakpoints, small))
+    {
+        &~ .togglecross
+        {
+            display: none;
+        }
+    }
 }
 
 .togglecross
@@ -30,9 +37,16 @@
 .togglebars, .togglecross
 {
     margin-left: 40%;
+    color: map-get($colors, label);
+
     :after 
     {
         content: "Menu";
         font-family: arial;
+    }
+
+    @media all and(min-width: map-get($breakpoints, small))
+    {
+        display: none;
     }
 }

@@ -1,6 +1,8 @@
 body
 {
-    padding: 0 2%;
+    padding: 0 $standardpadding;
+    max-width: 1000px;
+    margin: auto;
 }
 
 *, *:after, *:before
@@ -18,12 +20,11 @@ ul
     margin: 0;
     padding: 0;
     list-style: none;
-    background-color: #ddd;
 }
 
 a
 {
-    padding: 5px;
+    padding: $standardpadding;
     text-decoration: none;  
-    color: #000;
+    color: map-get($colors, link);
 }

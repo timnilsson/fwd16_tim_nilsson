@@ -1,13 +1,28 @@
 #menu
 {
     display: none;
-    border-radius: 5px;
-    ul
+    background-color: map-get($colors, menubg);
+    .items
     {
         display: flex;
         flex-flow: column wrap;
         flex: 5;
-        
+        border: 1px solid map-get($colors, border);
+
+        @media all and(min-width: map-get($breakpoints, small))
+        {
+            flex-flow: row wrap;
+            align-content: stretch;
+            
+            li
+            {
+                flex: 1 1 50%;
+                @media all and(min-width: map-get($breakpoints, large))
+                {
+                    flex: 1 1 auto;
+                }
+            }
+        }
     }
 
     .social
@@ -17,10 +32,26 @@
         justify-content: space-around;
         flex: 1;
         text-align: center;
-        background-color: #3dd;
+        border: 1px solid map-get($colors, border);
+        background-color: map-get($colors, socialbg);
+        border-left: none; 
+
+        @media all and(min-width: map-get($breakpoints, large))
+        {
+            flex-flow: row wrap;
+        }
     }
+
     a
     {
         display: block;
+        height: 100%;
+    }
+
+    @media all and(min-width: map-get($breakpoints, small))
+    {
+        display: flex;
+        flex-flow: row wrap;
+        margin-top: 10px;
     }
 }
