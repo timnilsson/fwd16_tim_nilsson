@@ -1,0 +1,53 @@
+.cardwrapper
+{
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 10px;
+    .card 
+    {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: stretch;
+        margin: 0 0 10px;
+        padding: $standardpadding; 
+        border: 1px solid #000;
+
+        .imgwrapper
+        {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-around;
+            flex: 1;
+            img
+            {
+                margin-bottom: 5px;
+            }
+        }
+
+        .infowrapper
+        {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+            flex: 3;  
+            margin-left: 5px;
+            padding: $standardpadding*2 0;
+            h2
+            {
+                text-align: center;
+            }
+
+            a
+            {
+                margin: 10px 0;
+                text-align: center;
+                text-transform: uppercase;
+            }
+
+            p
+            {
+                flex: 1;
+            }
+        }
+    }
+}
