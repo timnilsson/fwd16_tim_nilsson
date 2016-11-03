@@ -1,6 +1,9 @@
 #container
 {   /* Configurating how the "card-wrapper" should handle its cards */
-    display: flex;
+    display: -webkit-flex;
+    -webkit-flex-flow: column nowrap;
+    -webkit-justify-content: space-around;
+    display: flex;  
     flex-flow: column nowrap;
     justify-content: space-around;
     margin: $standardmargin auto 0;
@@ -8,6 +11,8 @@
 
     .card
     {   /* Configurating the individual cards */
+        display: -webkit-flex;
+        -webkit-flex-flow: column nowrap;
         display: flex;
         flex-flow: column nowrap;
         box-sizing: border-box;
@@ -26,6 +31,8 @@
 
         .nameinfo
         {   /* Configurating the owner/author wrapper */
+            display: -webkit-flex;
+            -webkit-justify-content: space-between;
             display: flex;
             justify-content: space-between;
             margin: $standardmargin 0;
@@ -33,6 +40,9 @@
 
         .productcontent
         {   /* Configurating the div for the main content of each card */
+            display: -webkit-flex;
+            -webkit-flex-flow: column nowrap;
+            -webkit-justify-content: space-between;
             display: flex;
             flex-flow: column nowrap;
             justify-content: space-between;
@@ -40,6 +50,7 @@
 
             p
             {   
+                -webkit-flex: 1;
                 flex: 1;
             }
 
@@ -86,6 +97,7 @@
 
     @include breakpoint(medium)
     {   /* Make the card wrapper show as a row instead of column */
+        -webkit-flex-flow: row wrap;
         flex-flow: row wrap;
         max-width: $contwidthbig;
     }

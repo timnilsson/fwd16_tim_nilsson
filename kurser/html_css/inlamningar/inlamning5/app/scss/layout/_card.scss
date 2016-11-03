@@ -18,9 +18,17 @@
             flex-flow: column wrap;
             justify-content: space-around;
             flex: 1;
+            h2
+            {
+                display: none;
+            }
             img
             {
                 margin-bottom: 5px;
+                &:last-child 
+                {
+                    margin-bottom: 0;
+                }
             }
         }
 
@@ -31,15 +39,22 @@
             justify-content: space-between;
             flex: 3;  
             margin-left: 5px;
-            padding: $standardpadding*2 0;
-            h2
+            
+            h2, h3
             {
                 text-align: center;
             }
 
+            h3
+            {
+                text-decoration: underline;
+                font-weight: normal;
+                font-size: 1.2em;
+            }
+
             a
             {
-                margin: 10px 0;
+                margin: 5px 0;
                 text-align: center;
                 text-transform: uppercase;
             }
@@ -47,6 +62,31 @@
             p
             {
                 flex: 1;
+            }
+
+            table
+            {
+                width: 100%;
+                tr
+                {
+                    display: flex;
+                    justify-content: space-between;
+                    &:nth-child(even)
+                    {
+                        background-color: #eee;
+                    }
+
+                    td
+                    {
+                        
+                        flex: 5;
+                    }
+
+                    .place
+                    {
+                        flex: 1;
+                    }
+                }
             }
         }
     }

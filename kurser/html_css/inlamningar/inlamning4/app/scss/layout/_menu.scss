@@ -1,7 +1,7 @@
 .labelmenutoggle
-{   /* Styling the icon that opens the menu */
+{   
     .fa-bars
-    {
+    {   /* Styling the icon that opens the menu */
         @extend %togglebase;
     }
 
@@ -30,14 +30,14 @@
 {   /* Hiding the checkbox-symbol that handles the menu toggling */
     display: none;
 
-    &:checked ~
-    {   /* If the label has been checked/clicked */
-        #menu
-        {   /* Open the menu */
+    &:checked
+    {   
+        ~ #menu
+        {   /* If the label has been checked/clicked, Open the menu */
             display: block;
         }
 
-        .labelmenucross
+        ~ .labelmenucross
         {   /* Display the icon that closes the menu */
             display: block;
 
@@ -47,7 +47,7 @@
             }
         }
 
-        .labelmenutoggle
+        ~ .labelmenutoggle
         {   /* Hide the icon that opens the menu */
             display: none;
         }
@@ -57,9 +57,10 @@
 #menu
 {   /* Hiding the whole menu wrapper by default */
     display: none;
-
     ul
     {   /* The menu shows as flex column by default */
+        display: -webkit-flex;
+        -webkit-flex-flow: column nowrap;
         display: flex;
         flex-flow: column nowrap;
         list-style: none;
@@ -71,6 +72,7 @@
 
             @include breakpoint(small)
             {
+                -webkit-flex: 1 1 50%;
                 flex: 1 1 50%;
 
                 &:hover
@@ -81,31 +83,42 @@
 
             @include breakpoint(large)
             {
+                -webkit-flex: 1;
                 flex: 1;
             }
         }
 
         .social
-        {   /* Change the inner menu to show its content as a row */
-            display: flex;
-            flex-flow: row nowrap;
-
-            li
-            {   /* Give the icons 25% width so they can fit in one row */
-                flex: 1 1 25%;
+        {
+            ul
+            {   /* Change the inner menu to show its content as a row */
+                display: -webkit-flex;
+                -webkit-flex-flow: row nowrap;
+                display: flex;
+                flex-flow: row nowrap;
+                li
+                {   /* Give the icons 25% width so they can fit in one row */
+                    -webkit-flex: 1 1 25%;
+                    flex: 1 1 25%;
+                }
             }
 
             @include breakpoint(small)
             {
+                -webkit-flex: 1 1 100%;
+                -webkit-order: 1;
                 flex: 1 1 100%;
                 order: 1;
             }
 
             @include breakpoint(large)
             {
+                -webkit-flex: 1;
                 flex: 1;
             }
         }
+        
+        
 
         .dropdown
         {
@@ -158,6 +171,8 @@
 
                             @include breakpoint(small)
                             {
+                                display: -webkit-flex;
+                                -webkit-flex-flow: row wrap;
                                 display: flex;
                                 flex-flow: row wrap;                           
                             }
@@ -202,12 +217,12 @@
 
                             @include breakpoint(small)
                             {
+                                -webkit-flex: 1 1 50%;
                                 flex: 1 1 50%;
                             }
 
                             @include breakpoint(large)
-                            {
-                                
+                            {             
                                 padding: .6em;
                             }
                         }
@@ -223,9 +238,9 @@
                     } 
 
                     &:hover
-                    {   /* Show dropdown content when hovering the list item */
+                    {   
                         .secdropcon
-                        {
+                        {   /* Show dropdown content when hovering the list item */
                             @include breakpoint(large)
                             {
                                 display: block;
@@ -237,9 +252,9 @@
             }
 
             &:hover
-            {   /* Show dropdown content when hovering the list item */
+            {   
                 .dropdown-content
-                {
+                {   /* Show dropdown content when hovering the list item */
                     @include breakpoint(large)
                     {
                         display: block;
@@ -251,6 +266,7 @@
 
         @include breakpoint(small)
         {   /* Show menu as a row when screen width goes above 500 pixels */
+            -webkit-flex-flow: row wrap;
             flex-flow: row wrap;
         }
     }
