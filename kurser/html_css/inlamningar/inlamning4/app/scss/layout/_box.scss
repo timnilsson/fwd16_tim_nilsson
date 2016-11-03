@@ -8,7 +8,7 @@
     justify-content: space-around;
     margin: $standardmargin auto 0;
     max-width: $contwidthsmall;
-
+    
     .card
     {   /* Configurating the individual cards */
         display: -webkit-flex;
@@ -90,7 +90,8 @@
 
         @include breakpoint(medium) // Add mixincontent for the breakpoint
         {   /* Change card size when screen width goes above 600 pixels */
-            width: 48%;   
+            -webkit-flex-basis: 48%;
+            flex-basis: 48%;   
             @include cardgrowth();
         }
     }

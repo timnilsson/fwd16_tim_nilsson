@@ -68,7 +68,7 @@
         li
         {
             text-align: center;
-            padding: 0.5em 0;
+            padding: 0.2em 0;
 
             @include breakpoint(small)
             {
@@ -122,7 +122,7 @@
 
         .dropdown
         {
-                
+            left: 0; 
             #menudrop
             {   /* Hiding the checkbox-symbol for the dropdown menu */
                 display: none;
@@ -135,14 +135,17 @@
 
             .drop
             {   /* Styling the dropdown label */
-                @extend a;
+                font-size: 1.5em;
+                font-weight: bold;
+                color: map-get($colors, link);
+                text-decoration: none;
             }
 
             .dropdown-content
             {   /* Hiding the dropdown content by default */
                 display: none;
                 font-size: 0.9em;
-
+                left: 0;
                 li
                 {
                     a
@@ -158,9 +161,11 @@
 
                 .secdrop
                 {     
-                    @extend a;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    text-decoration: none;
                     color: map-get($colors, link)+#223;
-
+                    left: 0;
                     #secmenudrop
                     {   /* Hiding the checkbox-symbol for the dropdown menu */
                         display: none;
@@ -207,7 +212,7 @@
                     {   /* Styling the content for the second dropdown */
                         display: none;
                         font-size: 0.55em;
-                        
+                        left: 0;
                         li
                         {
                             a
@@ -231,7 +236,7 @@
                         {
                             position: absolute;
                             left: 100%;
-                            top: 15%;
+                            top: 0%;
                             z-index: 100;
                             background: rgba(map-get($colors, backgroundstandard), 0.3);
                         }
