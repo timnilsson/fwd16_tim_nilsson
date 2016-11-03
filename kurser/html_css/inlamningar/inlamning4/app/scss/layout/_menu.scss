@@ -117,8 +117,6 @@
                 flex: 1;
             }
         }
-        
-        
 
         .dropdown
         {
@@ -154,9 +152,9 @@
                     }
 
                     @include breakpoint(large)
-                        {
-                            position: relative;
-                        }
+                    {
+                        position: relative;
+                    }
                 }
 
                 .secdrop
@@ -201,10 +199,7 @@
                         &:after
                         {
                             content: "\21D3";
-                            @include breakpoint(large)
-                            {
-                                content: "\21D2";
-                            }
+                            
                         }
                     }
 
@@ -233,40 +228,17 @@
                         }
 
                         @include breakpoint(large)
-                        {
-                            position: absolute;
-                            left: 100%;
-                            top: 0%;
+                        {                          
                             z-index: 100;
                             background: rgba(map-get($colors, backgroundstandard), 0.3);
                         }
                     } 
 
-                    &:hover
-                    {   
-                        .secdropcon
-                        {   /* Show dropdown content when hovering the list item */
-                            @include breakpoint(large)
-                            {
-                                display: block;
-                            }
-                        }
-
-                    }
+                    
                 }
             }
 
-            &:hover
-            {   
-                .dropdown-content
-                {   /* Show dropdown content when hovering the list item */
-                    @include breakpoint(large)
-                    {
-                        display: block;
-                    }
-                }
-
-            }
+            
         }
 
         @include breakpoint(small)
