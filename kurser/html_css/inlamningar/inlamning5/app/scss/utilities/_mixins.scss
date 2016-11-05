@@ -1,1 +1,52 @@
 // Mixin that prints media breakpoint query based on the input value
+
+@mixin cardgrowth()
+{
+    &:nth-child(5n)
+    {
+        flex: 0 1 100%;
+
+        .imgwrapper
+        {
+            order: 1;
+            padding-left: $standardpadding;
+        }
+
+        .infowrapper
+        {
+            flex: 5;
+
+            p
+            {
+                max-height: 30%;
+            }
+
+            section
+            {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                align-content: flex-start;
+                
+
+                header
+                {
+                    flex-basis: 100%;
+                }
+
+                article
+                {
+                    flex: 0 1 30%;
+                    border: 1px solid #000;
+
+                    a
+                    {
+                        display: block;
+                        height: 100%;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}

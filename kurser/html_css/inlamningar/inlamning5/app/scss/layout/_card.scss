@@ -2,6 +2,7 @@
 {
     display: flex;
     flex-flow: column wrap;
+    justify-content: space-between;
     margin-top: 10px;
     .card 
     {
@@ -62,6 +63,23 @@
             p
             {
                 flex: 1;
+                
+                color: red;
+    
+            }
+
+            section
+            {
+                display: none;
+            }
+
+            .tablewrapper
+            {
+                display: none;
+                @media all and(min-width: 400px)
+                {
+                    display: block;
+                }
             }
 
             table
@@ -89,5 +107,20 @@
                 }
             }
         }
+
+        @media all and(min-width: 600px)
+        {
+            flex: 0 1 49.5%;
+
+            @include cardgrowth();
+
+        }
+
     }
+
+    @media all and(min-width: 600px)
+    {
+        flex-flow: row wrap;
+    }
+
 }
