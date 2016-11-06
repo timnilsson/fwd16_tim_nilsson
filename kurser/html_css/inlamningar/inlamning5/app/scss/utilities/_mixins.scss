@@ -6,6 +6,7 @@
     {
         flex: 0 1 100%;
 
+        // PUT IN CARD CLASS
         .imgwrapper
         {
             order: 1;
@@ -48,5 +49,18 @@
                 }
             }
         }
+    }
+}
+
+@mixin colorcard()
+{
+    $counter: 1;
+    @each $card, $color in $cardbackground
+    {
+        &:nth-child(#{$counter})
+        {
+            background-color: $color;
+        }
+        $counter: $counter+1;
     }
 }

@@ -37,6 +37,7 @@
 .togglebars, .togglecross
 {
     margin-left: 40%;
+    font-size: 2em;
     color: map-get($colors, label);
 
     :after 
@@ -48,5 +49,96 @@
     @media all and(min-width: map-get($breakpoints, small))
     {
         display: none;
+    }
+}
+
+#sub1toggle, #sub2toggle
+{
+    display: none;
+}
+
+#sub1toggle:checked
+{
+    ~ .drop
+    {
+        display: block;
+        li a
+        {
+            padding: $standardpadding;
+            padding-left: 10%;
+            font-size: 80%;
+        }
+
+        @media all and(min-width: 1000px)
+        {
+
+            li a, .sub2label
+            {
+                padding-left: 0;
+            }
+        }
+    }
+
+    
+}
+
+.sub1label
+{
+    display: block;
+    padding: $standardpadding;
+
+    &:hover
+    {
+        cursor: pointer;
+    }
+}
+
+#sub2toggle:checked
+{
+    ~ .drop2
+    {
+        display: flex;
+        flex-flow: column wrap;
+        
+        li 
+        {
+            flex: 0;
+            a
+            {
+                font-size: 60%;
+                padding-left: 15%;
+            }
+        }
+
+        @media all and(min-width: 500px)
+        {
+            flex-flow: row wrap;
+            width: 200%;
+            padding-left: 20%;
+        }
+
+        @media all and(min-width: 1000px)
+        {
+            flex-flow: column wrap;
+            width: 100%;
+            padding-left: 0;
+
+            li a
+            {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.sub2label
+{
+    padding: $standardpadding;
+    padding-left: 10%;
+    font-size: 80%;
+
+    &:hover
+    {
+        cursor: pointer;
     }
 }

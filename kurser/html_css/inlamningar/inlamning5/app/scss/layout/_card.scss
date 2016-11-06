@@ -97,10 +97,15 @@
                     td
                     {
                         
-                        flex: 5;
+                        flex: 4;
                     }
 
                     .place
+                    {
+                        flex: 1;
+                    }
+
+                    .prize
                     {
                         flex: 1;
                     }
@@ -115,6 +120,13 @@
             @include cardgrowth();
 
         }
+
+        &:last-child
+        {
+            margin-bottom: 1px;
+        }
+
+        @include colorcard();
 
     }
 
