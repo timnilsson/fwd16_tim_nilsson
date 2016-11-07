@@ -1,5 +1,16 @@
 // Mixin that prints media breakpoint query based on the input value
 
+@mixin breakpoint($width)
+{
+    @if map-has-key($breakpoints, $width)
+    {
+        @media all and(min-width: map-get($breakpoints, $width))
+        {
+            @content
+        }
+    }
+}
+
 @mixin cardgrowth()
 {
     &:nth-child(5n)
@@ -17,18 +28,12 @@
         {
             flex: 5;
 
-            p
-            {
-                max-height: 30%;
-            }
-
             section
             {
                 display: flex;
                 flex-flow: row wrap;
                 justify-content: space-around;
-                align-content: flex-start;
-                
+                align-content: flex-start;       
 
                 header
                 {
@@ -43,7 +48,7 @@
                     a
                     {
                         display: block;
-                        height: 100%;
+                        
                         text-align: left;
                     }
                 }
@@ -59,7 +64,7 @@
     {
         &:nth-child(#{$counter})
         {
-            background-color: $color;
+            background: rgba($color, 0.9);
         }
         $counter: $counter+1;
     }

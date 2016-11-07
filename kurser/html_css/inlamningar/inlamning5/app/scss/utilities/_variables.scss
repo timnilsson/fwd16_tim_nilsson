@@ -1,17 +1,25 @@
 $standardpadding: 5px;
+$standardmargin: 10px;
 
 $colors:
 (
     link: #000,
+    linklight: #fff,
     label: #363,
     menubg: #eee,
     socialbg: #3dd,
-    border: #000
+    border: #000,
+    linkbg: #c88,
+    tblight: #eee,
+    tbdark: #ccc,
+    footer: #000
 );
 
 $breakpoints:
 (
+    xsmall: 400px,
     small: 500px,
+    medium: 600px,
     large: 1000px
 );
 

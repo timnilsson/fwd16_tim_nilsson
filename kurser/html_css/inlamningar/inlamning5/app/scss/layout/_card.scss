@@ -3,15 +3,15 @@
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: $standardmargin;
     .card 
     {
         display: flex;
         flex-flow: row wrap;
         align-items: stretch;
-        margin: 0 0 10px;
+        margin: 0 0 $standardmargin;
         padding: $standardpadding; 
-        border: 1px solid #000;
+        border: 1px solid map-get($colors, border);
 
         .imgwrapper
         {
@@ -53,19 +53,17 @@
                 font-size: 1.2em;
             }
 
-            a
+            .cardlink
             {
                 margin: 5px 0;
                 text-align: center;
                 text-transform: uppercase;
+                background-color: map-get($colors, linkbg);
             }
 
             p
             {
                 flex: 1;
-                
-                color: red;
-    
             }
 
             section
@@ -76,7 +74,7 @@
             .tablewrapper
             {
                 display: none;
-                @media all and(min-width: 400px)
+                @include breakpoint(xsmall)
                 {
                     display: block;
                 }
@@ -89,14 +87,19 @@
                 {
                     display: flex;
                     justify-content: space-between;
+
                     &:nth-child(even)
                     {
-                        background-color: #eee;
+                        background-color: map-get($colors, tblight);
+                    }
+
+                    &:nth-child(odd)
+                    {
+                        background-color: map-get($colors, tbdark);
                     }
 
                     td
                     {
-                        
                         flex: 4;
                     }
 
@@ -104,21 +107,20 @@
                     {
                         flex: 1;
                     }
-
-                    .prize
+                    
+                    .price
                     {
                         flex: 1;
                     }
+
                 }
             }
         }
 
-        @media all and(min-width: 600px)
+        @include breakpoint(medium)
         {
             flex: 0 1 49.5%;
-
             @include cardgrowth();
-
         }
 
         &:last-child
@@ -130,7 +132,7 @@
 
     }
 
-    @media all and(min-width: 600px)
+    @include breakpoint(medium)
     {
         flex-flow: row wrap;
     }

@@ -20,7 +20,7 @@
     {
         display: block;
     }
-    @media all and(min-width: map-get($breakpoints, small))
+    @include breakpoint(small)
     {
         &~ .togglecross
         {
@@ -46,7 +46,7 @@
         font-family: arial;
     }
 
-    @media all and(min-width: map-get($breakpoints, small))
+    @include breakpoint(small)
     {
         display: none;
     }
@@ -69,7 +69,7 @@
             font-size: 80%;
         }
 
-        @media all and(min-width: 1000px)
+        @include breakpoint(large)
         {
 
             li a, .sub2label
@@ -110,14 +110,14 @@
             }
         }
 
-        @media all and(min-width: 500px)
+        @include breakpoint(small)
         {
             flex-flow: row wrap;
             width: 200%;
             padding-left: 20%;
         }
 
-        @media all and(min-width: 1000px)
+        @include breakpoint(large)
         {
             flex-flow: column wrap;
             width: 100%;

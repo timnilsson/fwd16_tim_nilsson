@@ -1,0 +1,6 @@
+%baselink
+{
+    padding: $standardpadding;
+    text-decoration: none;  
+    color: map-get($colors, link);
+}

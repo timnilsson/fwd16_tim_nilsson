@@ -16,7 +16,7 @@
             display: none;
         }
 
-        @media all and(min-width: map-get($breakpoints, small))
+        @include breakpoint(small)
         {
             flex-flow: row wrap;
             align-content: stretch;
@@ -24,7 +24,7 @@
             li
             {
                 flex: 1 1 50%;
-                @media all and(min-width: map-get($breakpoints, large))
+                @include breakpoint(large)
                 {
                     flex: 1 1 auto;
                 }
@@ -43,7 +43,7 @@
         background-color: map-get($colors, socialbg);
         border-left: none; 
 
-        @media all and(min-width: map-get($breakpoints, large))
+        @include breakpoint(large)
         {
             flex-flow: row wrap;
         }
@@ -55,10 +55,10 @@
         height: 100%;
     }
 
-    @media all and(min-width: map-get($breakpoints, small))
+    @include breakpoint(small)
     {
         display: flex;
         flex-flow: row wrap;
-        margin-top: 10px;
+        margin-top: $standardmargin;
     }
 }

@@ -1,10 +1,10 @@
 #pagefooter
 {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: space-between;
     padding-top: 10px;
-    background-color: #000;
+    background-color: map-get($colors, footer);
 
     .footcol
     {
@@ -12,11 +12,19 @@
         flex-flow: column wrap;
         flex: 1;
         text-align: center;
+        margin: $standardmargin 0;
+
         a
         {
-            margin-bottom: 10px;
+            margin-bottom: $standardmargin;
             padding: 0;
-            color: #fff;
+            font-size: 1.2em;
+            color: map-get($colors, linklight);
         }
+    }
+
+    @include breakpoint(small)
+    {
+        flex-flow: row wrap;
     }
 }

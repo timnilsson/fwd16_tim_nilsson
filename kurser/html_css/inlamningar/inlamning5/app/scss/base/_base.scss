@@ -1,5 +1,9 @@
 body
 {
+    background-image: url(../images/arena.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     padding: 0 $standardpadding;
     max-width: 1000px;
     margin: auto;
@@ -19,9 +23,7 @@ ul
 
 a
 {
-    padding: $standardpadding;
-    text-decoration: none;  
-    color: map-get($colors, link);
+    @extend %baselink;
 }
 
 img
