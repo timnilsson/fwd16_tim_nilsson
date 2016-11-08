@@ -6,7 +6,7 @@ $colors:
     link: #000,
     linklight: #fff,
     label: #363,
-    menubg: #eee,
+    ulbg: #eee,
     socialbg: #3dd,
     border: #000,
     linkbg: #c88,
@@ -19,7 +19,7 @@ $breakpoints:
 (
     xsmall: 400px,
     small: 500px,
-    medium: 600px,
+    medium: 650px,
     large: 1000px
 );
 
@@ -27,12 +27,12 @@ $cardbackground:
 (
     lightgrey: #ddd,
     darkgray: #888,
-    lightblue: #55c,
+    lightblue: #66f,
     darkblue: #33f,
-    lightgreen: #5c5,
-    darkgreen: #3f3,
-    lightred: #c55,
-    darkred: #f33,
-    piggy: #f0f,
+    lightgreen: #6f6,
+    darkgreen: #1d1,
+    lightred: #f55,
+    darkred: #f22,
+    piggy: #c0c,
     goldy: #e3e38a
 );

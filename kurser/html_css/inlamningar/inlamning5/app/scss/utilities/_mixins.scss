@@ -11,9 +11,9 @@
     }
 }
 
-@mixin cardgrowth()
+@mixin cardgrowth($num)
 {
-    &:nth-child(5n)
+    &:nth-child(#{$num}n)
     {
         flex: 0 1 100%;
 
@@ -33,7 +33,10 @@
                 display: flex;
                 flex-flow: row wrap;
                 justify-content: space-around;
-                align-content: flex-start;       
+                align-content: flex-start;
+                margin: $standardmargin 0;
+                padding: $standardpadding 0;       
+                background-color: map-get($colors, ulbg);
 
                 header
                 {

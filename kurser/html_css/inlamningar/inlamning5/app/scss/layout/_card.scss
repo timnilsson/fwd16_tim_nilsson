@@ -19,6 +19,7 @@
             flex-flow: column wrap;
             justify-content: space-around;
             flex: 1;
+            
             h2
             {
                 display: none;
@@ -48,6 +49,7 @@
 
             h3
             {
+                display: none;
                 text-decoration: underline;
                 font-weight: normal;
                 font-size: 1.2em;
@@ -59,6 +61,7 @@
                 text-align: center;
                 text-transform: uppercase;
                 background-color: map-get($colors, linkbg);
+                border-bottom: 2px solid map-get($colors, border);
             }
 
             p
@@ -71,56 +74,47 @@
                 display: none;
             }
 
-            .tablewrapper
+            .listholder
             {
                 display: none;
+                background-color: map-get($colors, ulbg);
+                padding: $standardpadding;
+
                 @include breakpoint(xsmall)
+                {
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: space-between;
+
+                    ul
+                    {
+                        :first-child 
+                        {
+                            font-weight: bold;
+                        }
+
+                        &:nth-child(2)
+                        {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            @include breakpoint(xsmall)
+            {
+                h3
                 {
                     display: block;
                 }
             }
 
-            table
-            {
-                width: 100%;
-                tr
-                {
-                    display: flex;
-                    justify-content: space-between;
-
-                    &:nth-child(even)
-                    {
-                        background-color: map-get($colors, tblight);
-                    }
-
-                    &:nth-child(odd)
-                    {
-                        background-color: map-get($colors, tbdark);
-                    }
-
-                    td
-                    {
-                        flex: 4;
-                    }
-
-                    .place
-                    {
-                        flex: 1;
-                    }
-                    
-                    .price
-                    {
-                        flex: 1;
-                    }
-
-                }
-            }
         }
 
         @include breakpoint(medium)
         {
             flex: 0 1 49.5%;
-            @include cardgrowth();
+            @include cardgrowth(5);
         }
 
         &:last-child
