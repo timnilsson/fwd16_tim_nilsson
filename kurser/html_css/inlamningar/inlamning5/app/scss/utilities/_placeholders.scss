@@ -1,6 +1,17 @@
 %baselink
-{
+{   // General styling of links
     padding: $standardpadding;
     text-decoration: none;  
     color: map-get($colors, link);
+}
+
+%dropdownlabel
+{   // General styling of labels for dropdown menus
+    display: block;
+    padding: $standardpadding;
+
+    &:hover
+    {   /* Show mouse cursor as if it was hovering a link */
+        cursor: pointer;
+    }
 }

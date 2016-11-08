@@ -1,0 +1,46 @@
+.items
+{   /* How to layout the list items */
+    display: flex;
+    flex-flow: column wrap;
+    flex: 5;
+    left: 0;
+    border: 1px solid map-get($colors, border);
+
+    ul
+    {
+        display: none;
+    }
+
+    @include breakpoint(small)
+    {   /* Items to be on a row and only 50% width each */
+        flex-flow: row wrap;
+        align-content: stretch;
+            
+        li
+        {
+            flex: 1 1 50%;
+            @include breakpoint(large)
+            {   /* When screen width above 1000 pixels, let the items use up all the space on a single row */
+                flex: 1 1 auto;
+            }
+        }
+    }
+}
+
+.social
+{   /* How to layout the social icons */
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    flex: 1;
+    left: 0;
+    text-align: center;
+    border: 1px solid map-get($colors, border);
+    background-color: map-get($colors, socialbg);
+    border-left: none; 
+
+    @include breakpoint(large)
+    {   /* Show as a row on desktop */
+        flex-flow: row wrap;
+    }
+}

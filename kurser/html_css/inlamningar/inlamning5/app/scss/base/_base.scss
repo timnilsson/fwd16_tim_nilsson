@@ -6,12 +6,12 @@ body
     background-attachment: fixed;
     background-size: cover;
     padding: 0 $standardpadding;
-    max-width: 1000px;
+    max-width: $maxbodywidth;
     margin: auto;
 }
 
 *, *:after, *:before
-{
+{   /* Set border box on all elements */
     box-sizing: border-box;
 }
 
@@ -24,11 +24,11 @@ ul
 
 a
 {
-    @extend %baselink;
+    @extend %baselink; // Import the placeholder that deciding the general link-style
 }
 
 img
-{
+{   /* How images are to be treated */
     max-width: 100%;
     height: auto;
 }

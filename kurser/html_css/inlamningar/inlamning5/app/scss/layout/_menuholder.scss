@@ -1,0 +1,20 @@
+#menu
+{   /* How to layout the menu items */
+    display: none;
+    font-size: 2em;
+    left: 0;
+    background-color: map-get($colors, ulbg);
+    
+    a
+    {   /* Have all a tags inside menu to use these settings */
+        display: block;
+        height: 100%;
+    }
+
+    @include breakpoint(small)
+    {   /* Always display the menu, as flex row, when above 500 pixels*/
+        display: flex;
+        flex-flow: row wrap;
+        margin-top: $standardmargin;
+    }
+}

@@ -5,27 +5,33 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial scale=1.0">
         <link rel="stylesheet" href="css/styles.css">
+        <!-- Link to make sure the font-icons can be read properly -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     </head>
 
     <body>
         <header>
+            <!-- Creates the possibility of toggling the whole menu on/off -->
             <input type="checkbox" id="menutoggle">
             <label for="menutoggle" class="togglebars"><i class="fa fa-bars" aria-hidden="true"></i></label>
             <label for="menutoggle" class="togglecross"><i class="fa fa-times-circle" aria-hidden="true"></i></label>
+            <!-- Wrapper for the whole menu -->
             <nav id="menu">
+                <!-- ul for the standard list items -->
                 <ul class="items">
                     <li><a href="">Item01</a></li>
                     <li><a href="">Item02</a></li>
                     <li>
+                        <!-- Checkbox and label for the first dropdown -->
                         <input type="checkbox" id="sub1toggle">
                         <label for="sub1toggle" class="sub1label">Item03</label>
-                        <ul class="drop">
+                        <ul class="drop"> <!-- First dropdown content -->
                             <li><a href="">SubItem01</a></li>
                             <li>
+                                <!-- Checkbox and label for the second dropdown -->
                                 <input type="checkbox" id="sub2toggle">
                                 <label for="sub2toggle" class="sub2label">SubItem02</label>
-                                <ul class="drop2">
+                                <ul class="drop2"> <!-- Second dropdown content -->
                                     <li><a href="">SubSub01</a></li>
                                     <li><a href="">SubSub02</a></li>
                                     <li><a href="">SubSub03</a></li>
@@ -38,6 +44,7 @@
                     <li><a href="">Item05</a></li>
                     <li><a href="">Item06</a></li>
                 </ul>
+                <!-- ul for the social icons -->
                 <ul class="social">
                     <li><a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
                     <li><a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
@@ -47,8 +54,11 @@
             </nav>
         </header>
 
+        <!-- Wrapper for all of the flex cards -->
         <div class="cardwrapper">
+            <!-- The singular card -->
             <div class="card">
+                <!-- wrapper for images -->
                 <div class="imgwrapper">
                     <h2>Players</h2>
                     <img src="images/gtr.jpeg" alt="gtr">
@@ -57,13 +67,43 @@
                     <img src="images/xizt.jpeg" alt="">
                     <img src="images/pyth.jpeg" alt="">
                 </div>
+                <!-- wrapper for main card content -->
                 <div class="infowrapper">
                     <h2>Team</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptatibus nesciunt, doloribus eum dignissimos itaque aperiam.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium fuga possimus at, eligendi quaerat sequi eum suscipit accusamus modi. Maiores dicta nisi assumenda inventore consequatur adipisci, veritatis asperiores officia, consectetur?</p>
+
+                    <!-- Section containing articles -->
+                    <section>
+                        <header>
+                            <h3>Articles about team</h3>
+                        </header>
+                        <article>
+                            <a href="">
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>   
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                    </section>
 
                     <a href="" class="cardlink">Read more</a>
                     
                     <h3>Recent Tournaments</h3>
+                    <!-- Wrapper for the inside lists -->
                     <div class="listholder">
                         <ul>
                             <li>Tournament</li>
@@ -103,7 +143,36 @@
                 <div class="infowrapper">
                     <h2>Team</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptatibus nesciunt, doloribus eum dignissimos itaque aperiam.</p>
+
+                    <section>
+                        <header>
+                            <h3>Articles about team</h3>
+                        </header>
+                        <article>
+                            <a href="">
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>   
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                    </section>
+
                     <a href="" class="cardlink">Read more</a>
+
                     <h3>Recent Tournaments</h3>
                     <div class="listholder">
                         <ul>
@@ -143,7 +212,36 @@
                 <div class="infowrapper">
                     <h2>Team</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptatibus nesciunt, doloribus eum dignissimos itaque aperiam.</p>
+
+                    <section>
+                        <header>
+                            <h3>Articles about team</h3>
+                        </header>
+                        <article>
+                            <a href="">
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>   
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                    </section>
+
                     <a href="" class="cardlink">Read more</a>
+
                     <h3>Recent Tournaments</h3>
                     <div class="listholder">
                         <ul>
@@ -183,7 +281,36 @@
                 <div class="infowrapper">
                     <h2>Team</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptatibus nesciunt, doloribus eum dignissimos itaque aperiam.</p>
+
+                    <section>
+                        <header>
+                            <h3>Articles about team</h3>
+                        </header>
+                        <article>
+                            <a href="">
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>   
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                    </section>
+
                     <a href="" class="cardlink">Read more</a>
+
                     <h3>Recent Tournaments</h3>
                     <div class="listholder">
                         <ul>
@@ -292,127 +419,36 @@
                 <div class="infowrapper">
                     <h2>Team</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptatibus nesciunt, doloribus eum dignissimos itaque aperiam.</p>
-                    <a href="" class="cardlink">Read more</a>
-                    <h3>Recent Tournaments</h3>
-                    <div class="listholder">
-                        <ul>
-                            <li>Tournament</li>
-                            <li>Katowice</li>
-                            <li>Katowice</li>
-                            <li>Katowice</li>
-                            <li>Katowice</li>
-                        </ul>
-                        <ul>
-                            <li>Placing</li>
-                            <li>2</li>
-                            <li>8</li>
-                            <li>1</li>
-                            <li>11</li>
-                        </ul>
-                        <ul>
-                            <li>Price</li>
-                            <li>$14423</li>
-                            <li>$14423</li>
-                            <li>$14423</li>
-                            <li>$14423</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
-            <div class="card">
-                <div class="imgwrapper">
-                    <h2>Players</h2>
-                    <img src="images/gtr.jpeg" alt="gtr">
-                    <img src="images/forest.jpeg" alt="">
-                    <img src="images/friberg.jpeg" alt="">
-                    <img src="images/xizt.jpeg" alt="">
-                    <img src="images/pyth.jpeg" alt="">
-                </div>
-                <div class="infowrapper">
-                    <h2>Team</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptatibus nesciunt, doloribus eum dignissimos itaque aperiam.</p>
-                    <a href="" class="cardlink">Read more</a>
-                    <h3>Recent Tournaments</h3>
-                    <div class="listholder">
-                        <ul>
-                            <li>Tournament</li>
-                            <li>Katowice</li>
-                            <li>Katowice</li>
-                            <li>Katowice</li>
-                            <li>Katowice</li>
-                        </ul>
-                        <ul>
-                            <li>Placing</li>
-                            <li>2</li>
-                            <li>8</li>
-                            <li>1</li>
-                            <li>11</li>
-                        </ul>
-                        <ul>
-                            <li>Price</li>
-                            <li>$14423</li>
-                            <li>$14423</li>
-                            <li>$14423</li>
-                            <li>$14423</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                    <section>
+                        <header>
+                            <h3>Articles about team</h3>
+                        </header>
+                        <article>
+                            <a href="">
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>   
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                    </section>
 
-            <div class="card">
-                <div class="imgwrapper">
-                    <h2>Players</h2>
-                    <img src="images/gtr.jpeg" alt="gtr">
-                    <img src="images/forest.jpeg" alt="">
-                    <img src="images/friberg.jpeg" alt="">
-                    <img src="images/xizt.jpeg" alt="">
-                    <img src="images/pyth.jpeg" alt="">
-                </div>
-                <div class="infowrapper">
-                    <h2>Team</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptatibus nesciunt, doloribus eum dignissimos itaque aperiam.</p>
                     <a href="" class="cardlink">Read more</a>
-                    <h3>Recent Tournaments</h3>
-                    <div class="listholder">
-                        <ul>
-                            <li>Tournament</li>
-                            <li>Katowice</li>
-                            <li>Katowice</li>
-                            <li>Katowice</li>
-                            <li>Katowice</li>
-                        </ul>
-                        <ul>
-                            <li>Placing</li>
-                            <li>2</li>
-                            <li>8</li>
-                            <li>1</li>
-                            <li>11</li>
-                        </ul>
-                        <ul>
-                            <li>Price</li>
-                            <li>$14423</li>
-                            <li>$14423</li>
-                            <li>$14423</li>
-                            <li>$14423</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
-            <div class="card">
-                <div class="imgwrapper">
-                    <h2>Players</h2>
-                    <img src="images/gtr.jpeg" alt="gtr">
-                    <img src="images/forest.jpeg" alt="">
-                    <img src="images/friberg.jpeg" alt="">
-                    <img src="images/xizt.jpeg" alt="">
-                    <img src="images/pyth.jpeg" alt="">
-                </div>
-                <div class="infowrapper">
-                    <h2>Team</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptatibus nesciunt, doloribus eum dignissimos itaque aperiam.</p>
-                    <a href="" class="cardlink">Read more</a>
                     <h3>Recent Tournaments</h3>
                     <div class="listholder">
                         <ul>
@@ -481,6 +517,214 @@
                     </section>
 
                     <a href="" class="cardlink">Read more</a>
+
+                    <h3>Recent Tournaments</h3>
+                    <div class="listholder">
+                        <ul>
+                            <li>Tournament</li>
+                            <li>Katowice</li>
+                            <li>Katowice</li>
+                            <li>Katowice</li>
+                            <li>Katowice</li>
+                        </ul>
+                        <ul>
+                            <li>Placing</li>
+                            <li>2</li>
+                            <li>8</li>
+                            <li>1</li>
+                            <li>11</li>
+                        </ul>
+                        <ul>
+                            <li>Price</li>
+                            <li>$14423</li>
+                            <li>$14423</li>
+                            <li>$14423</li>
+                            <li>$14423</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="imgwrapper">
+                    <h2>Players</h2>
+                    <img src="images/gtr.jpeg" alt="gtr">
+                    <img src="images/forest.jpeg" alt="">
+                    <img src="images/friberg.jpeg" alt="">
+                    <img src="images/xizt.jpeg" alt="">
+                    <img src="images/pyth.jpeg" alt="">
+                </div>
+                <div class="infowrapper">
+                    <h2>Team</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptatibus nesciunt, doloribus eum dignissimos itaque aperiam.</p>
+
+                    <section>
+                        <header>
+                            <h3>Articles about team</h3>
+                        </header>
+                        <article>
+                            <a href="">
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>   
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                    </section>
+
+                    <a href="" class="cardlink">Read more</a>
+
+                    <h3>Recent Tournaments</h3>
+                    <div class="listholder">
+                        <ul>
+                            <li>Tournament</li>
+                            <li>Katowice</li>
+                            <li>Katowice</li>
+                            <li>Katowice</li>
+                            <li>Katowice</li>
+                        </ul>
+                        <ul>
+                            <li>Placing</li>
+                            <li>2</li>
+                            <li>8</li>
+                            <li>1</li>
+                            <li>11</li>
+                        </ul>
+                        <ul>
+                            <li>Price</li>
+                            <li>$14423</li>
+                            <li>$14423</li>
+                            <li>$14423</li>
+                            <li>$14423</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="imgwrapper">
+                    <h2>Players</h2>
+                    <img src="images/gtr.jpeg" alt="gtr">
+                    <img src="images/forest.jpeg" alt="">
+                    <img src="images/friberg.jpeg" alt="">
+                    <img src="images/xizt.jpeg" alt="">
+                    <img src="images/pyth.jpeg" alt="">
+                </div>
+                <div class="infowrapper">
+                    <h2>Team</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptatibus nesciunt, doloribus eum dignissimos itaque aperiam.</p>
+
+                    <section>
+                        <header>
+                            <h3>Articles about team</h3>
+                        </header>
+                        <article>
+                            <a href="">
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>   
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                    </section>
+
+                    <a href="" class="cardlink">Read more</a>
+
+                    <h3>Recent Tournaments</h3>
+                    <div class="listholder">
+                        <ul>
+                            <li>Tournament</li>
+                            <li>Katowice</li>
+                            <li>Katowice</li>
+                            <li>Katowice</li>
+                            <li>Katowice</li>
+                        </ul>
+                        <ul>
+                            <li>Placing</li>
+                            <li>2</li>
+                            <li>8</li>
+                            <li>1</li>
+                            <li>11</li>
+                        </ul>
+                        <ul>
+                            <li>Price</li>
+                            <li>$14423</li>
+                            <li>$14423</li>
+                            <li>$14423</li>
+                            <li>$14423</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="imgwrapper">
+                    <h2>Players</h2>
+                    <img src="images/gtr.jpeg" alt="gtr">
+                    <img src="images/forest.jpeg" alt="">
+                    <img src="images/friberg.jpeg" alt="">
+                    <img src="images/xizt.jpeg" alt="">
+                    <img src="images/pyth.jpeg" alt="">
+                </div>
+                <div class="infowrapper">
+                    <h2>Team</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptatibus nesciunt, doloribus eum dignissimos itaque aperiam.</p>
+
+                    <section>
+                        <header>
+                            <h3>Articles about team</h3>
+                        </header>
+                        <article>
+                            <a href="">
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>   
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">                   
+                                <h3>Article Title</h3>                   
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus aperiam corporis doloremque amet. 
+                                </p>
+                            </a>
+                        </article>
+                    </section>
+
+                    <a href="" class="cardlink">Read more</a>
+
                     <h3>Recent Tournaments</h3>
                     <div class="listholder">
                         <ul>
@@ -510,7 +754,9 @@
 
         </div>
 
+        <!-- Wrapper for the footer content -->
         <footer id="pagefooter">
+            <!-- Wrapper for footer link collection -->
             <div class="footcol">
                 <a href="">Link1</a>
                 <a href="">Link2</a>

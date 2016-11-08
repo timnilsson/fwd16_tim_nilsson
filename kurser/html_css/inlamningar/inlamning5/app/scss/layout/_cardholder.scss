@@ -1,13 +1,12 @@
 .cardwrapper
-{
+{   /* How to layout the flex cards */
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
-    margin-top: $standardmargin;
-    
+    margin-top: $standardmargin;    
 
     @include breakpoint(medium)
-    {
+    {   /* When going above medium width, show as a flex row */
         flex-flow: row wrap;
     }
 

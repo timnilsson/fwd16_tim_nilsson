@@ -1,145 +1,145 @@
 .card 
-    {
+{   /* How the specific cards are styled */
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    margin: 0 0 $standardmargin;
+    padding: $standardpadding; 
+    border: 1px solid map-get($colors, border);
+
+    .imgwrapper
+    {   /* Handles the container containing the pictures */
         display: flex;
-        flex-flow: row wrap;
-        align-items: stretch;
-        margin: 0 0 $standardmargin;
-        padding: $standardpadding; 
-        border: 1px solid map-get($colors, border);
+        flex-flow: column wrap;
+        justify-content: space-around;
+        flex: 1;
 
-        .imgwrapper
+        h2
         {
-            display: flex;
-            flex-flow: column wrap;
-            justify-content: space-around;
-            flex: 1;
+            display: none;
+        }
 
-            h2
+        img
+        {
+            margin-bottom: 5px;
+            &:last-child 
             {
-                display: none;
+                margin-bottom: 0;
             }
-            img
-            {
-                margin-bottom: 5px;
-                &:last-child 
+        }
+    }
+
+    .infowrapper
+    {   /* How to handle the content inside the content container */
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        flex: 3;  
+        margin-left: 5px;
+            
+        h2, h3
+        {
+            text-align: center;
+        }
+
+        h3
+        {
+            display: none;
+            text-decoration: underline;
+            font-weight: normal;
+            font-size: 1.2em;
+        }
+
+        .cardlink
+        {   /* Special styling for the colored link in the flex card */
+            margin: 5px 0;
+            text-align: center;
+            text-transform: uppercase;
+            background-color: map-get($colors, linkbg);
+            border-bottom: 2px solid map-get($colors, border);
+        }
+
+        p
+        {
+            flex: 1;
+        }
+
+        section
+        {   /* Settings for the seciont containing articles */
+            display: none;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-content: flex-start;
+            margin: $standardmargin 0;
+            padding: $standardpadding 0;       
+            background-color: map-get($colors, ulbg);
+
+            header
+            {   /* Let the header part in the section take up the whole width */
+                flex-basis: 100%;
+            }
+
+            article
+            {   /* Split the articles width up */
+                flex: 0 1 30%;
+                border: 1px solid #000;
+
+                a
                 {
-                    margin-bottom: 0;
+                    display: block;                      
+                    text-align: left;
                 }
             }
         }
 
-        .infowrapper
-        {
-            display: flex;
-            flex-flow: column wrap;
-            justify-content: space-between;
-            flex: 3;  
-            margin-left: 5px;
-            
-            h2, h3
-            {
-                text-align: center;
-            }
-
-            h3
-            {
-                display: none;
-                text-decoration: underline;
-                font-weight: normal;
-                font-size: 1.2em;
-            }
-
-            .cardlink
-            {
-                margin: 5px 0;
-                text-align: center;
-                text-transform: uppercase;
-                background-color: map-get($colors, linkbg);
-                border-bottom: 2px solid map-get($colors, border);
-            }
-
-            p
-            {
-                flex: 1;
-            }
-
-            section
-            {
-                display: none;
-                flex-flow: row wrap;
-                justify-content: space-around;
-                align-content: flex-start;
-                margin: $standardmargin 0;
-                padding: $standardpadding 0;       
-                background-color: map-get($colors, ulbg);
-
-                header
-                {
-                    flex-basis: 100%;
-                }
-
-                article
-                {
-                    flex: 0 1 30%;
-                    border: 1px solid #000;
-
-                    a
-                    {
-                        display: block;
-                        
-                        text-align: left;
-                    }
-                }
-            }
-
-            .listholder
-            {
-                display: none;
-                background-color: map-get($colors, ulbg);
-                padding: $standardpadding;
-
-                @include breakpoint(xsmall)
-                {
-                    display: flex;
-                    flex-flow: row wrap;
-                    justify-content: space-between;
-
-                    ul
-                    {
-                        :first-child 
-                        {
-                            font-weight: bold;
-                        }
-
-                        &:nth-child(2)
-                        {
-                            text-align: center;
-                        }
-                    }
-                }
-            }
+        .listholder
+        {   /* Setting for the lists at the bottom of the content container */
+            display: none;
+            background-color: map-get($colors, ulbg);
+            padding: $standardpadding;
 
             @include breakpoint(xsmall)
-            {
-                h3
-                {
-                    display: block;
+            {   /* Show the content when screen width is above 400 pixels */
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+
+                ul
+                {   /* Special settings for some of the list children */
+                    :first-child 
+                    {
+                        font-weight: bold;
+                    }
+
+                    &:nth-child(2)
+                    {
+                        text-align: center;
+                    }
                 }
             }
-
         }
 
-        @include breakpoint(medium)
-        {
-            flex: 0 1 49.5%;
-            @include cardgrowth(5);
+        @include breakpoint(xsmall)
+        {   /* Display the list heading */
+            h3
+            {
+                display: block;
+            }
         }
-
-        &:last-child
-        {
-            margin-bottom: 1px;
-        }
-
-        @include colorcard();
 
     }
+
+    @include breakpoint(medium)
+    {   /* Half the generic card width when on medium screens */
+        flex: 0 1 49.9%;
+        @include cardgrowth(5); // Call the cardgrowth mixin
+    }
+
+    &:last-child
+    {
+        margin-bottom: 1px;
+    }
+
+    @include colorcard(); // Call the colorcard mixin
+
+}

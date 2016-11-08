@@ -1,5 +1,5 @@
 #pagefooter
-{
+{   /* How to layout the items in the footer */
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
@@ -7,12 +7,13 @@
     background-color: map-get($colors, footer);
 
     .footcol
-    {
+    {   /* How to layout each column inside the footer */
         display: flex;
         flex-flow: column wrap;
         flex: 1;
         text-align: center;
         margin: $standardmargin 0;
+        left: 0;
 
         a
         {
@@ -24,7 +25,7 @@
     }
 
     @include breakpoint(small)
-    {
+    {   /* Flow the items in a row on bigger screens */
         flex-flow: row wrap;
     }
 }

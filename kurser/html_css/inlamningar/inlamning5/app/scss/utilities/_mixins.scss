@@ -1,49 +1,50 @@
 // Mixin that prints media breakpoint query based on the input value
-
 @mixin breakpoint($width)
 {
-    @if map-has-key($breakpoints, $width)
+    @if map-has-key($breakpoints, $width) // Make sure the breakpoint value exists
     {
         @media all and(min-width: map-get($breakpoints, $width))
         {
-            @content
+            @content // Local content will be in here
         }
     }
 }
 
+// Mixin that changes the settings to some of the cards
 @mixin cardgrowth($num)
 {
     &:nth-child(#{$num}n)
-    {
+    {   /* Sett full size onf lex card */
         flex: 0 1 100%;
 
         .imgwrapper
-        {
+        {   /* Change the order in wich the imagewrapper will appear */
             order: 1;
             padding-left: $standardpadding;
         }
 
         .infowrapper
-        {
+        {   /* Increase the width percentage that infowrapper takes */
             flex: 5;
 
             section
-            {
+            {   /* Display the section on the card */
                 display: flex;          
             }
         }
     }
 }
 
+// Mixin that sets a background-color to each card
 @mixin colorcard()
 {
-    $counter: 1;
-    @each $card, $color in $cardbackground
+    $counter: 1; // Counter variabel that remembers wich is the active card
+    @each $card, $color in $cardbackground // Loop through the cardbackground sass map
     {
         &:nth-child(#{$counter})
-        {
-            background: rgba($color, 0.9);
+        {   /* Set background color and transparancy on this card */
+            background: rgba($color, 0.85);
         }
-        $counter: $counter+1;
+        $counter: $counter+1; // Increase the counter number
     }
 }

@@ -1,77 +1,73 @@
-#menutoggle
-{
+#menutoggle, #sub1toggle, #sub2toggle
+{   /* Don't show any of the actual checkboxes */
     display: none;
 }
 
 #menutoggle:checked 
-{
+{   /* Settings to apply when the checkbox has been clicked */
     ~ #menu
-    {
+    {   /* Display menu as flex container */
         display: flex;
         flex-flow: row wrap;
     }
 
     ~ .togglebars
-    {
+    {   /* Hide the label that opens the menu */
         display: none;
     }
 
     ~ .togglecross
-    {
+    {   /* Show the label that closes the menu */
         display: block;
     }
+
     @include breakpoint(small)
     {
         &~ .togglecross
-        {
+        {   /* Hide the label that closes the menu */
             display: none;
         }
     }
 }
 
 .togglecross
-{
+{   /* Hide the label that closes the menu per default */
     display: none;
 }
 
 .togglebars, .togglecross
-{
+{   /* General setting for the labels that opens/closes the menu */
     margin-left: 40%;
     font-size: 2em;
     color: map-get($colors, label);
 
     :after 
-    {
+    {   /* Put textcontent after the label icon */
         content: "Menu";
         font-family: arial;
     }
 
     @include breakpoint(small)
-    {
+    {   /* Dont display the labels on larger screens */
         display: none;
     }
 }
 
-#sub1toggle, #sub2toggle
-{
-    display: none;
-}
-
 #sub1toggle:checked
-{
+{   /* Settings that apply when having the first dropdown label checked */
     ~ .drop
     {
         display: block;
+        left: 0;
         li a
         {
             padding: $standardpadding;
             padding-left: 10%;
-            font-size: 80%;
+            font-size: 75%;
         }
 
         @include breakpoint(large)
         {
-
             li a, .sub2label
             {
                 padding-left: 0;
@@ -82,19 +78,19 @@
     
 }
 
-.sub1label
-{
-    display: block;
-    padding: $standardpadding;
+.sub1label, .sub2label
+{   /* Generic settings for the dropdown labels */
+    @extend %dropdownlabel;
+}
 
-    &:hover
-    {
-        cursor: pointer;
-    }
+.sub2label
+{   /* Unique settings for the second dropdown label */
+    padding-left: 10%;
+    font-size: 75%;
 }
 
 #sub2toggle:checked
-{
+{   /* Settings that apply when having the second dropdown label checked */
     ~ .drop2
     {
         display: flex;
@@ -111,7 +107,7 @@
         }
 
         @include breakpoint(small)
-        {
+        {   /* change the content-flow when between 500 and 1000 pixels */
             flex-flow: row wrap;
             width: 200%;
             padding-left: 20%;
@@ -131,14 +127,3 @@
     }
 }
 
-.sub2label
-{
-    padding: $standardpadding;
-    padding-left: 10%;
-    font-size: 80%;
-
-    &:hover
-    {
-        cursor: pointer;
-    }
-}
