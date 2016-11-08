@@ -1,0 +1,14 @@
+.cardwrapper
+{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    margin-top: $standardmargin;
+    
+
+    @include breakpoint(medium)
+    {
+        flex-flow: row wrap;
+    }
+
+}

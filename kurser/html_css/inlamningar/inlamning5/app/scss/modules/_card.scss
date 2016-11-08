@@ -1,10 +1,4 @@
-.cardwrapper
-{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    margin-top: $standardmargin;
-    .card 
+.card 
     {
         display: flex;
         flex-flow: row wrap;
@@ -19,7 +13,7 @@
             flex-flow: column wrap;
             justify-content: space-around;
             flex: 1;
-            
+
             h2
             {
                 display: none;
@@ -72,6 +66,30 @@
             section
             {
                 display: none;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                align-content: flex-start;
+                margin: $standardmargin 0;
+                padding: $standardpadding 0;       
+                background-color: map-get($colors, ulbg);
+
+                header
+                {
+                    flex-basis: 100%;
+                }
+
+                article
+                {
+                    flex: 0 1 30%;
+                    border: 1px solid #000;
+
+                    a
+                    {
+                        display: block;
+                        
+                        text-align: left;
+                    }
+                }
             }
 
             .listholder
@@ -125,10 +143,3 @@
         @include colorcard();
 
     }
-
-    @include breakpoint(medium)
-    {
-        flex-flow: row wrap;
-    }
-
-}

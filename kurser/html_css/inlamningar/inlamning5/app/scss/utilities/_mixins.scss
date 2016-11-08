@@ -17,7 +17,6 @@
     {
         flex: 0 1 100%;
 
-        // PUT IN CARD CLASS
         .imgwrapper
         {
             order: 1;
@@ -30,31 +29,7 @@
 
             section
             {
-                display: flex;
-                flex-flow: row wrap;
-                justify-content: space-around;
-                align-content: flex-start;
-                margin: $standardmargin 0;
-                padding: $standardpadding 0;       
-                background-color: map-get($colors, ulbg);
-
-                header
-                {
-                    flex-basis: 100%;
-                }
-
-                article
-                {
-                    flex: 0 1 30%;
-                    border: 1px solid #000;
-
-                    a
-                    {
-                        display: block;
-                        
-                        text-align: left;
-                    }
-                }
+                display: flex;          
             }
         }
     }
