@@ -65,14 +65,7 @@
             padding-left: 10%;
             font-size: 75%;
         }
-
-        @include breakpoint(large)
-        {
-            li a, .sub2label
-            {
-                padding-left: 0;
-            }
-        }
+        
     }
 
     
@@ -117,11 +110,11 @@
         {
             flex-flow: column wrap;
             width: 100%;
-            padding-left: 0;
+            padding-left: 10%;
 
             li a
             {
-                padding-left: 0;
+                padding-left: 10%;
             }
         }
     }
