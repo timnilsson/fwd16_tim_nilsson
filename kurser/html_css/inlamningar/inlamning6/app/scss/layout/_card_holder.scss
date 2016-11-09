@@ -1,0 +1,11 @@
+#cardwrapper
+{
+    display: flex;
+    flex-flow: column wrap;
+
+    @include breakpoint(medium)
+    {
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+}

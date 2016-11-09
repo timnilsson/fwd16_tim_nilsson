@@ -1,0 +1,53 @@
+#menutoggle, #megatoggle, .togglecross
+{
+    display: none;
+}
+
+.togglebars, .togglecross
+{
+    position: absolute;
+    right: 3.5%;
+    font-size: 150%;
+
+    @include breakpoint(small)
+    {
+        display: none;
+    }
+}
+
+.togglebars:before 
+{
+    content: 'MENU';
+    color: #000;
+}
+
+#menutoggle:checked
+{
+    ~ #menu
+    {
+        display: block;
+    }
+
+    ~ .togglebars
+    {
+        display: none;
+    }
+
+    ~ .togglecross
+    {
+        display: block;
+
+        @include breakpoint(small)
+        {
+            display: none;
+        }
+    }
+}
+
+#megatoggle:checked
+{
+    ~ ul .megamenu
+    {
+        display: flex;
+    }
+}

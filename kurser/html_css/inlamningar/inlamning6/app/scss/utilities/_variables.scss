@@ -1,9 +1,18 @@
 ///Standard padding on most divs
 $standardpadding: 5px;
+$maxbodywidth: 1000px;
 
 /// Sass map of colors
 $colors:
 (
     landingbg: #38c1a4,
     border: #000
+);
+
+/// Sass map for breakpoints
+$breakpoints:
+(
+    small: 500px,
+    medium: 600px,
+    large: 1000px
 );
