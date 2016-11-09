@@ -1,0 +1,14 @@
+*
+{
+    padding: $standardpadding;
+}
+
+*, *:after, *:before
+{   /* Set border box on all elements */
+    box-sizing: border-box;
+}
+
+html, body
+{
+    padding: 0;
+}
