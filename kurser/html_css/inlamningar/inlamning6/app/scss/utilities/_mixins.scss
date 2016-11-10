@@ -1,7 +1,53 @@
+/// Prints a media query based on the input width
+// Printing a media query
 @mixin breakpoint($width)
 {
-    @media all and(min-width: map-get($breakpoints, $width))
+    @if map-has-key($breakpoints, $width)
     {
-        @content;
+        @media all and(min-width: map-get($breakpoints, $width))
+        {
+            @content;
+        }
+    }
+
+    @else 
+    {
+        @warn "There is no such breakpoint";
+    }
+}
+
+/// Increasing the width on some of the cards
+@mixin cardgrowth($startnumber)
+{
+    flex: 0 1 33%;
+
+    &:nth-child(#{$startnumber}n)
+    {
+        flex: 0 1 66.5%;
+    }
+}
+
+/// Printing out standard cards, with the possibility to change the colors
+@mixin printcard($color:#000, $bgcolor:#966)
+{
+    @extend %cardbase;
+    color: $color;
+    background-color: $bgcolor;
+
+    header
+    {
+        background-color: $bgcolor +50%;
+    }
+}
+
+/// Changes the opacity on all of the cards
+@mixin seetrough($opacity)
+{
+    @for $i from 1 through $cardnumber
+    {
+        &:nth-child(#{$i})
+        {
+            opacity: $opacity;
+        }
     }
 }

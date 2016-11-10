@@ -5,6 +5,10 @@
 
 body
 {
+    background-image: url(../images/arena.jpeg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
     margin: 0 auto;
     padding: 0;
     max-width: $maxbodywidth;
