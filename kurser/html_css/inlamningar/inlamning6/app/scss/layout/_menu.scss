@@ -81,6 +81,44 @@
         }
     }
 
+    form
+    {
+        
+        margin: 10px 0 0;
+        fieldset
+        {
+            display: flex;
+            flex-flow: column wrap;
+            border: none;
+
+            legend
+            {
+                text-decoration: underline;
+            }
+
+            input
+            {          
+                margin: 0 0 10px;
+                color: #000;
+            }
+
+            .textbox
+            {
+                font-size: .8em;
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .submit
+            {
+                width: 100px;
+                margin-left: 0;
+            }
+        }
+
+        
+    }
+
     @include breakpoint(small)
     {
         margin-left: -200%;
@@ -92,6 +130,11 @@
         >ul
         {
             flex: 0 1 25%;
+
+            &:last-child
+            {
+                flex: 0 1 40%;
+            }
         }
     }
 
