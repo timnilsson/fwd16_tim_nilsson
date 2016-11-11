@@ -1,17 +1,18 @@
 .card
 {
-    @include printcard(#000, #669);
+    // Import default settings to each printcard
+    @include printcard();
     @include seetrough(0.9);
 
     header
-    {
+    {   /* Setting to the head info of a card */
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
         font-size: 1.5em;
         font-weight: bold;
         text-align: center;
-        border-bottom: 3px solid #000;
+        border-bottom: 3px solid map-get($colors, border);
 
         h2
         {
@@ -19,7 +20,7 @@
             margin: 0;
             padding: 0;
             font-size: 100%;
-            border-right: 3px solid #000;
+            border-right: 3px solid map-get($colors, border);
         }
 
         .meta
@@ -31,9 +32,9 @@
     }
 
     .content
-    {
+    {   /* Setting to the main content of a card */
         flex: 1;     
-        border-bottom: 3px solid #000;
+        border-bottom: 3px solid map-get($colors, border);
 
         p
         {
@@ -43,7 +44,7 @@
     }
 
     footer
-    {
+    {   /* Setting to the additional info of a card */
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
@@ -51,17 +52,17 @@
 
         span
         {
-            font-size: 1.5em;
+            font-size: 1.3em;
         }
     }
 
     @include breakpoint('medium')
-    {
+    {   /* Change card size settings on medium screens */
         @include cardgrowth(5);
     }
 
     &:nth-child(4)
-    {
-        @include printcard();
+    {   /* Change local card colors */
+        @include printcard(#ff9, #966);
     }
 }

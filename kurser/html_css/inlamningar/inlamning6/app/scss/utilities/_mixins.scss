@@ -1,5 +1,4 @@
 /// Prints a media query based on the input width
-// Printing a media query
 @mixin breakpoint($width)
 {
     @if map-has-key($breakpoints, $width)
@@ -28,7 +27,7 @@
 }
 
 /// Printing out standard cards, with the possibility to change the colors
-@mixin printcard($color:#000, $bgcolor:#966)
+@mixin printcard($color:map-get($colors, cardtext), $bgcolor:map-get($colors, cardbg))
 {
     @extend %cardbase;
     color: $color;
@@ -40,7 +39,7 @@
     }
 }
 
-/// Changes the opacity on all of the cards
+/// Changes the opacity on all the cards
 @mixin seetrough($opacity)
 {
     @for $i from 1 through $cardnumber

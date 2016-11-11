@@ -1,8 +1,8 @@
 #menu
-{
+{   /* Settings for the menuwrapper and some of its content */
     display: none;
-    background-color: #000;
-    color: #fff;
+    background-color: map-get($colors, menubg);
+    color: map-get($colors, linklight);
     width: 85%;
     padding: $standardpadding;
 
@@ -36,6 +36,12 @@
     {
         display: block;
         cursor: pointer;
+        transition: 0.3s;
+
+        &:hover
+        {
+            color: map-get($colors, linkhover);
+        }
     }
 
     @include breakpoint(small)
@@ -48,104 +54,14 @@
     {
         position: relative;
     }
-}
-
-
-
-#menu .dropdown .megamenu
-{
-    display: none;
-    flex-flow: column wrap;
-
-    li
-    {
-        padding-left: 10px;
-        font-size: 80%;
-        h2
-        {
-            font-size: 100%;
-
-            @include breakpoint(small)
-            {
-                text-align: center;
-            }
-        }
-    }
 
     a
     {
-        padding-left: +10px;
-        @include breakpoint(small)
+        transition: 0.3s;
+
+        &:hover
         {
-            text-align: center;
+            color: map-get($colors, linkhover);
         }
     }
-
-    form
-    {
-        
-        margin: 10px 0 0;
-        fieldset
-        {
-            display: flex;
-            flex-flow: column wrap;
-            border: none;
-
-            legend
-            {
-                text-decoration: underline;
-            }
-
-            input
-            {          
-                margin: 0 0 10px;
-                color: #000;
-            }
-
-            .textbox
-            {
-                font-size: .8em;
-                width: 100%;
-                max-width: 250px;
-            }
-
-            .submit
-            {
-                width: 100px;
-                margin-left: 0;
-            }
-        }
-
-        
-    }
-
-    @include breakpoint(small)
-    {
-        margin-left: -200%;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        border-top: 1px solid #f00;
-        border-bottom: 1px solid #f00;
-        background-color: #3f3f3f;
-        >ul
-        {
-            flex: 0 1 25%;
-
-            &:last-child
-            {
-                flex: 0 1 40%;
-            }
-        }
-    }
-
-    @include breakpoint(large)
-    {
-        position: absolute;
-        margin-left: -147.8%;
-        left: 0;
-        top: 43px;
-        width: 395.8%;
-        z-index: 100;
-    }
-
 }

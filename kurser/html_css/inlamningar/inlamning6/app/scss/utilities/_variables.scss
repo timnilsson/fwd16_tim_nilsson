@@ -1,6 +1,6 @@
 /// Standard padding on most divs
 $standardpadding: 5px;
-/// Page not to get larger than this
+/// Page may not get larger than this
 $maxbodywidth: 1000px;
 /// Total number of cards
 $cardnumber: 10;
@@ -9,13 +9,23 @@ $cardnumber: 10;
 $colors:
 (
     landingbg: #38c1a4,
-    border: #000
+    menubg: #000,
+    megaheading: #933355,
+    megaborder: #55b,
+    megabg: #89b,
+    forminput: #000,
+    cardtext: #000,
+    cardbg: #669,
+    linklight: #fff,
+    linkhover: #339,
+    border: #000,
+    footer: #000
 );
 
 /// Sass map for breakpoints
 $breakpoints:
 (
     small: 500px,
-    medium: 600px,
+    medium: 650px,
     large: 1000px
 );

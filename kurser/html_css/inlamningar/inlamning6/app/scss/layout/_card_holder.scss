@@ -1,11 +1,17 @@
 #cardwrapper
-{
+{   /* Settings for the card wrapper */
     display: flex;
     flex-flow: column wrap;
+    margin-top: 10px;
 
     @include breakpoint(medium)
     {
         flex-flow: row wrap;
         justify-content: space-between;
+    }
+
+    @include breakpoint(large)
+    {
+        margin-top: 50px;
     }
 }
