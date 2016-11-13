@@ -1,0 +1,67 @@
+#menu
+{   /* Settings for the menuwrapper and some of its content */
+    display: none;
+    background-color: map-get($colors, menubg);
+    color: map-get($colors, linklight);
+    width: 85%;
+    padding: $standardpadding;
+
+    >ul
+    {
+        display: flex;
+        flex-flow: column wrap;
+
+        @include breakpoint(small)
+        {
+            flex-flow: row wrap;
+
+            li
+            {
+                flex: 0 1 33%;
+
+                @include breakpoint(large)
+                {
+                    flex: 1 1 auto;
+                }
+            }
+        }
+    }
+
+    label, a, h2
+    {
+        padding: $standardpadding;
+    }
+
+    label
+    {
+        display: block;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover
+        {
+            color: map-get($colors, linkhover);
+        }
+    }
+
+    @include breakpoint(small)
+    {
+        display: block;
+        width: 100%;
+    }
+
+    >ul>.dropdown
+    {
+        position: relative;
+    }
+
+    a
+    {
+        transition: 0.3s;
+
+        &:hover
+        {
+            color: map-get($colors, linkhover);
+        }
+    }
+}

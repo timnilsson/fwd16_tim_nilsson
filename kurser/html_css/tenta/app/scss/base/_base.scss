@@ -1,0 +1,42 @@
+*, *:after, *:before
+{   /* Set border box on all elements */
+    box-sizing: border-box;
+}
+
+body
+{   /* Settings rules for the whole site */
+    background-image: url(../images/photo.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    padding: 0;
+    max-width: $maxbodywidth;
+    padding: $standardpadding;
+}
+
+body>header
+{   /* Settings to main header content */
+    font-size: 1.5em;
+    min-height: 50px;
+}
+
+ul, li, h1, h2, h3, h4, h5, h6, p
+{   /* Set start margin and padding for many elements */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a
+{   /* Standard link setting */
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+
+img
+{   /* How to treat images per default */
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,61 @@
+/* How to treat the megamenu itself */
+.megamenu
+{
+    display: none;
+    flex-flow: column wrap;
+
+    li
+    {
+        padding-left: 10px;
+        font-size: 80%;
+        h2
+        {
+            font-size: 100%;
+            color: map-get($colors, megaheading);
+
+            @include breakpoint(small)
+            {
+                text-align: center;
+            }
+        }
+    }
+
+    a
+    {
+        padding-left: +10px;
+        @include breakpoint(small)
+        {
+            text-align: center;
+        }
+    }
+
+    @include breakpoint(small)
+    {   /* Changing position, size and colors when screen width is above 500px */
+        margin-left: -201.5%;
+        width: 306%;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        border-top: 1px solid map-get($colors, megaborder);
+        background-color: map-get($colors, megabg);
+        >ul
+        {
+            flex: 0 1 25%;
+
+            &:last-child
+            {
+                flex: 0 1 40%;
+            }
+        }
+    }
+
+    @include breakpoint(large)
+    {
+        /* Position becoming absolute when screen width goes above 1000px */
+        position: absolute;
+        margin-left: -147.8%;
+        left: 0;
+        top: 43px;
+        width: 395.8%;
+        z-index: 100;   
+    }
+}
