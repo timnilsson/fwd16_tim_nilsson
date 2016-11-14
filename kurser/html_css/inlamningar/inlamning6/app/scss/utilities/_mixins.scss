@@ -1,6 +1,8 @@
 /// Prints a media query based on the input width
+/// @param $width - input width value to be tested
 @mixin breakpoint($width)
 {
+    /// check if value exists
     @if map-has-key($breakpoints, $width)
     {
         @media all and(min-width: map-get($breakpoints, $width))
@@ -16,6 +18,7 @@
 }
 
 /// Increasing the width on some of the cards
+/// @param $startnumber - from what cardnumber it should start resize
 @mixin cardgrowth($startnumber)
 {
     flex: 0 1 33%;
@@ -27,6 +30,8 @@
 }
 
 /// Printing out standard cards, with the possibility to change the colors
+/// @param $color [map-get($colors, cardtext)] - requested color, or take a default value
+/// @param $bgcolor [map-get($colors, cardbg)] - requested background color, or take a default value
 @mixin printcard($color:map-get($colors, cardtext), $bgcolor:map-get($colors, cardbg))
 {
     @extend %cardbase;
@@ -40,12 +45,14 @@
 }
 
 /// Changes the opacity on all the cards
+/// @param $opacity - requested opacity
 @mixin seetrough($opacity)
 {
+    /// loops trough all the cards
     @for $i from 1 through $cardnumber
     {
         &:nth-child(#{$i})
-        {
+        {   /// Sets opacity on current card
             opacity: $opacity;
         }
     }

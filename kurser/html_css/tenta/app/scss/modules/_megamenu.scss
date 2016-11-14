@@ -3,6 +3,8 @@
 {
     display: none;
     flex-flow: column wrap;
+    align-content: flex-start;
+    align-items: flex-start;
 
     li
     {
@@ -27,6 +29,14 @@
         {
             text-align: center;
         }
+    }
+
+    iframe
+    {
+        width: 420px;
+        height: 315px;
+        padding-right: $standardpadding;
+        border: none;
     }
 
     @include breakpoint(small)

@@ -2,6 +2,7 @@
 {
     // Import default settings to each printcard
     @include printcard();
+    ///set opacity
     @include seetrough(0.9);
 
     header
