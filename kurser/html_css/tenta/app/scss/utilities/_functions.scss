@@ -1,0 +1,8 @@
+/// Function that makes colors brighter
+/// @param {Hex color value} $color - The color to be brightened up
+@function brightenColor($color)
+{
+    $result: $color + 50%;
+
+    @return $result;
+}

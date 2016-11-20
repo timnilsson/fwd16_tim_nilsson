@@ -5,10 +5,7 @@
 
 body
 {   /* Settings rules for the whole site */
-    background-image: url(../images/photo.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
+    @include bgimg(../images/photo.jpg);
     margin: 0 auto;
     padding: 0;
     max-width: $maxbodywidth;
@@ -38,5 +35,5 @@ a
 img
 {   /* How to treat images per default */
     max-width: 100%;
-    height: auto;
+    object-fit: cover;
 }

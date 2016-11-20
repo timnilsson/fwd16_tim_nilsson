@@ -2,7 +2,6 @@
 {
     // Import default settings to each printcard
     @include printcard();
-    ///set opacity
     @include seetrough(0.9);
 
     header
@@ -37,6 +36,12 @@
         flex: 1;     
         border-bottom: 3px solid map-get($colors, border);
 
+        img
+        {
+            object-fit: none;
+            object-position: 0 50%;
+        }
+
         p
         {
             padding: $standardpadding;
@@ -64,6 +69,6 @@
 
     &:nth-child(4)
     {   /* Change local card colors */
-        @include printcard(#ff9, #966);
+        @include printcard(#ff9, #696);
     }
 }

@@ -22,6 +22,12 @@
                 @include breakpoint(large)
                 {
                     flex: 1 1 auto;
+                    /*background-color: green;
+
+                    &:nth-child(4)
+                    {
+                        margin-left: auto;
+                    }*/
                 }
             }
         }
@@ -37,11 +43,30 @@
         display: block;
         cursor: pointer;
         transition: 0.3s;
+        /*
+        &:after 
+        {
+            position: relative;
+            
+            content: '';
+            top: 15px;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #f0f;
+            border-bottom: 10px solid transparent;
+
+            
+        }
 
         &:hover
         {
-            color: map-get($colors, linkhover);
-        }
+            &:after
+            {
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid #f0f;
+                top: -15px;
+            }
+        }*/
     }
 
     @include breakpoint(small)
