@@ -11,13 +11,11 @@ form
         legend
         {   /* Heading for the form */
             text-decoration: underline;
-            color: map-get($colors, megaheading);
         }
 
         input
         {          
             margin: 0 0 10px;
-            color: map-get($colors, forminput);
         }
 
         .textbox
@@ -33,11 +31,7 @@ form
             width: 100px;
             margin-left: 0;
             border: none;
-
-            &:hover 
-            {
-                background-color: map-get($colors, linklight);
-            }
+            color: map-get($colors, linkdark);
         }
     }
 }

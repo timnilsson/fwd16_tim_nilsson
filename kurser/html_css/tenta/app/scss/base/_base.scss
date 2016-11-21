@@ -5,17 +5,13 @@
 
 body
 {   /* Settings rules for the whole site */
-    @include bgimg(../images/photo.jpg);
-    margin: 0 auto;
-    padding: 0;
-    max-width: $maxbodywidth;
-    padding: $standardpadding;
+    @include bgimg('../images/South-Africa-Safari.jpg');
+    
 }
 
 body>header
 {   /* Settings to main header content */
-    font-size: 1.5em;
-    min-height: 50px;
+    background-color: map-get($colors, landlinkbg);
 }
 
 ul, li, h1, h2, h3, h4, h5, h6, p
@@ -29,11 +25,16 @@ a
 {   /* Standard link setting */
     display: block;
     text-decoration: none;
-    color: #fff;
+    color: map-get($colors, linkdark);
 }
 
 img
 {   /* How to treat images per default */
     max-width: 100%;
-    object-fit: cover;
+    height: auto;
 }
+
+label
+    {
+        cursor: pointer;
+    }

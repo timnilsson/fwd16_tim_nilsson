@@ -1,6 +1,35 @@
 /* How to treat the megamenu itself */
 .megamenu
 {
+    padding-left: 10px;
+    background-color: map-get($colors, menubg);
+
+    li a
+    {
+        padding-left: 20px;
+        color: map-get($colors, collectionbg);
+    }
+
+    @include breakpoint(large)
+    {
+        display: none;
+        flex-flow: row wrap;
+        position: absolute;
+        left: 5%;
+        top: 113px;
+        width: 90%;
+
+        ul
+        {
+            flex: 1 1 25%;
+            
+            &:last-child
+            {
+                flex: 1 1 33%;
+            }
+        }
+    }
+    /*
     display: none;
     flex-flow: column wrap;
     align-content: flex-start;
@@ -13,9 +42,9 @@
         h2
         {
             font-size: 100%;
-            color: map-get($colors, megaheading);
+            
 
-            @include breakpoint(small)
+            @include breakpoint(large)
             {
                 text-align: center;
             }
@@ -25,7 +54,7 @@
     a
     {
         padding-left: +10px;
-        @include breakpoint(small)
+        @include breakpoint(large)
         {
             text-align: center;
         }
@@ -39,14 +68,13 @@
         border: none;
     }
 
-    @include breakpoint(small)
-    {   /* Changing position, size and colors when screen width is above 500px */
+    @include breakpoint(large)
+    {   /* Changing position, size and colors when screen width is above 500px 
         margin-left: -201.5%;
         width: 306%;
         flex-flow: row wrap;
         justify-content: space-between;
-        border-top: 1px solid map-get($colors, megaborder);
-        background-color: map-get($colors, megabg);
+        
         >ul
         {
             flex: 0 1 25%;
@@ -60,12 +88,12 @@
 
     @include breakpoint(large)
     {
-        /* Position becoming absolute when screen width goes above 1000px */
+        /* Position becoming absolute when screen width goes above 1000px 
         position: absolute;
         margin-left: -147.8%;
         left: 0;
         top: 43px;
         width: 395.8%;
         z-index: 100;   
-    }
+    }*/
 }

@@ -2,20 +2,29 @@
 {
     height: 100vh;
     display: flex;
-    display: -webkit-flex;
     
     .landlink
     { /* Placing the content at the center of the page */
-      display: -webkit-flex;
-      -webkit-flex-direction: column;
-      -webkit-align-items: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: auto;
-      padding: $standardpadding;
+      padding: 1.5em;
       text-decoration: none;
-      background-color: map-get($colors, landingbg);
-      border: 1px solid map-get($colors, border);
+      background-color: map-get($colors, landlinkbg);
+      opacity: 0.8;
+      
+      .collection
+      {
+        padding: 1em;
+        color: map-get($colors, collectiontext);
+        background-color: map-get($colors, collectionbg);
+        text-align: center;
+      }
+
+      p
+      {
+        margin: 1em 0;
+      }
     }
 }

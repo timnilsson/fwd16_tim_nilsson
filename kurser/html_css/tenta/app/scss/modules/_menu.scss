@@ -2,7 +2,38 @@
 {   /* Settings for the menuwrapper and some of its content */
     display: none;
     background-color: map-get($colors, menubg);
-    color: map-get($colors, linklight);
+    color: map-get($colors, collectionbg);
+    padding: 5px;
+    width: 100%;
+
+    a
+    {
+        color: map-get($colors, collectionbg);
+    }
+
+    @include breakpoint(large)
+    {
+        display: block;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        background-color: map-get($colors, landlinkbg);
+
+        li
+        {
+            
+                padding: 5px;
+            
+
+            &:nth-child(6)
+            {
+                margin-left: auto;
+            }
+        }
+    }
+
+    
+    /*
     width: 85%;
     padding: $standardpadding;
 
@@ -11,7 +42,7 @@
         display: flex;
         flex-flow: column wrap;
 
-        @include breakpoint(small)
+        @include breakpoint(large)
         {
             flex-flow: row wrap;
 
@@ -27,7 +58,7 @@
                     &:nth-child(4)
                     {
                         margin-left: auto;
-                    }*/
+                    }
                 }
             }
         }
@@ -66,10 +97,10 @@
                 border-bottom: 10px solid #f0f;
                 top: -15px;
             }
-        }*/
+        }
     }
 
-    @include breakpoint(small)
+    @include breakpoint(large)
     {
         display: block;
         width: 100%;
@@ -86,7 +117,7 @@
 
         &:hover
         {
-            color: map-get($colors, linkhover);
+            
         }
-    }
+    }*/
 }

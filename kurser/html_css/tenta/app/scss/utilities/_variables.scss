@@ -8,24 +8,17 @@ $cardnumber: 10;
 /// Sass map of colors
 $colors:
 (
-    landingbg: #38c1a4,
-    menubg: #000,
-    megaheading: #933355,
-    megaborder: #55b,
-    megabg: #89b,
-    forminput: #000,
-    cardtext: #000,
-    cardbg: #669,
-    linklight: #fff,
-    linkhover: #339,
-    border: #000,
-    footer: #000
+    landlinkbg: #916c55,
+    collectionbg: white,
+    collectiontext: red,
+    linkdark: #000,
+    shadow: #000,
+    headers: #000,
+    menubg: #669
 );
 
 /// Sass map for breakpoints
 $breakpoints:
 (
-    small: 500px,
-    medium: 650px,
-    large: 1000px
+    large: 32.188em
 );

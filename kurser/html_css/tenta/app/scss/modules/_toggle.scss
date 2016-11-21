@@ -1,25 +1,21 @@
 /* How the checkboxes should react */
 
-#menutoggle, #megatoggle, .togglecross
+#menutoggle, #megatoggle
 {
     display: none;
 }
 
-.togglebars, .togglecross
+.menulabel
 {
-    position: absolute;
-    right: 3.5%;
-    font-size: 150%;
-
-    @include breakpoint(small)
+    &:after
+    {
+        content: '\2261';
+        margin-left: 80%;
+    }
+    @include breakpoint(large)
     {
         display: none;
     }
-}
-
-.togglebars:before 
-{
-    content: 'MENU';
 }
 
 #menutoggle:checked
@@ -28,20 +24,21 @@
     {
         display: block;
     }
+}
 
-    ~ .togglebars
+.droplabel
+{
+    &:after 
     {
-        display: none;
-    }
-
-    ~ .togglecross
-    {
-        display: block;
-
-        @include breakpoint(small)
-        {
-            display: none;
-        }
+        position: relative;
+        float: right;
+        content: '';
+        margin-left: 10px;
+        margin-top: 8px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid map-get($colors, collectionbg);
+        border-bottom: 5px solid transparent;
     }
 }
 
@@ -50,5 +47,15 @@
     ~ ul .megamenu
     {
         display: flex;
+    }
+
+    ~ .droplabel
+    {
+        &:after 
+        {
+            margin-top: 2px;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid map-get($colors, collectionbg);
+        }
     }
 }

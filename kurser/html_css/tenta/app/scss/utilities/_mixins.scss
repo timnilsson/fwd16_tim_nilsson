@@ -33,7 +33,7 @@
 /// Printing out standard cards, with the possibility to change the colors
 /// @param {Hex color value} $color [map-get($colors, cardtext)] - requested color, or take a default value
 /// @param {Hex color value} $bgcolor [map-get($colors, cardbg)] - requested background color, or take a default value
-@mixin printcard($color:map-get($colors, cardtext), $bgcolor:map-get($colors, cardbg))
+@mixin printcard($color:map-get($colors, landlinkbg), $bgcolor:map-get($colors, collectiontext))
 {
     @extend %cardbase;
     color: $color;
