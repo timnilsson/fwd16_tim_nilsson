@@ -1,3 +1,94 @@
+#cardwrapper
+{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    
+    .firstflex
+    {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        
+        .card1
+        {
+            margin-top: 10px;
+            border: 1px solid map-get($colors, border);
+            border-radius: 300px;
+            padding: 2em;
+            text-align: center;
+            h2
+            {
+                color: map-get($colors, pricehead);
+            }
+
+            @include breakpoint(large)
+            {
+                flex: 0 1 32%;
+            }
+        }
+
+        @include breakpoint(large)
+        {
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: stretch;
+        }
+    }
+
+    .secondflex
+    {
+        padding: 10px;
+        color: map-get($colors, border);
+
+        .card2
+        {
+            margin-top: 10px;
+            padding: 10px;
+
+            h2:before 
+            {
+                content: '- Kill this poacher - REWARD $';
+            }
+
+            p
+            {
+                padding: 10px;
+                background-color: map-get($colors, parabg);
+                color: map-get($colors, collectionbg);
+                flex: 1;
+            }
+
+            a
+            {
+                color: map-get($colors, border);
+            }
+
+            @include cardborder(3, 4);
+
+            @include breakpoint(large)
+            {
+                display: flex;
+                flex-flow: column wrap;
+                align-items: flex-start;
+                
+                @include cardgrowth(2);
+                
+            }
+        }
+
+        @include breakpoint(large)
+        {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            
+        }
+    }
+
+}
+
+/*
 .card
 {
     // Import default settings to each printcard
@@ -5,7 +96,7 @@
     @include seetrough(0.9);
 
     header
-    {   /* Setting to the head info of a card */
+    {   /* Setting to the head info of a card 
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
@@ -30,7 +121,7 @@
     }
 
     .content
-    {   /* Setting to the main content of a card */
+    {   /* Setting to the main content of a card 
         flex: 1;     
 
         img
@@ -47,7 +138,7 @@
     }
 
     footer
-    {   /* Setting to the additional info of a card */
+    {   /* Setting to the additional info of a card 
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
@@ -60,12 +151,12 @@
     }
 
     @include breakpoint('large')
-    {   /* Change card size settings on medium screens */
+    {   /* Change card size settings on medium screens 
         @include cardgrowth(5);
     }
 
     &:nth-child(4)
-    {   /* Change local card colors */
+    {   /* Change local card colors 
         @include printcard(#ff9, #696);
     }
-}
+}*/

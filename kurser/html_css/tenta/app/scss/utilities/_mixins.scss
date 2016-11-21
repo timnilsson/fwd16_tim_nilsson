@@ -17,6 +17,18 @@
     }
 }
 
+@mixin cardborder($start, $end)
+{
+    @for $i from $start through $end
+    {
+        &:nth-child(#{$i}) 
+        {
+            border-radius: 10px;
+            border: 2px solid map-get($colors, specborder);
+        }
+    }
+}
+
 /// Increasing the width on some of the cards
 /// @param {int} $startnumber - from what startnumber it should start rezising
 @mixin cardgrowth($startnumber)
@@ -25,7 +37,7 @@
 
     &:nth-child(#{$startnumber}n)
     {
-        flex: 0 1 66.5%;
+        flex: 0 1 66%;
     }
 }
 
