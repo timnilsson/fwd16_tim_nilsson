@@ -22,6 +22,8 @@
                 color: map-get($colors, pricehead);
             }
 
+            @include colorcard(3);
+
             @include breakpoint(large)
             {
                 flex: 0 1 32%;
@@ -38,10 +40,13 @@
 
     .secondflex
     {
-        
+        @include printcard();
 
         .card2
         {
+            display: flex;
+            flex-flow: column wrap;
+            align-items: flex-start;
             margin-top: 10px;
             padding: 10px;
 
@@ -63,92 +68,25 @@
                 color: map-get($colors, border);
             }
 
+            @include colorcard(6);
             @include cardborder(3, 4);
-            @include printcard(2);
+
+            @include breakpoint(large)
+            {
+                @include cardgrowth(2);
+            }
                 
             
         }
-
-        @include breakpoint(large)
+        
+        @include breakpoint('large')
         {
-            display: flex;
+            
             flex-flow: row wrap;
             justify-content: space-around;
             
-        }
+        }   
+    
     }
 
 }
-
-/*
-.card
-{
-    // Import default settings to each printcard
-    @include printcard();
-    @include seetrough(0.9);
-
-    header
-    {   /* Setting to the head info of a card 
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        font-size: 1.5em;
-        font-weight: bold;
-        text-align: center;
-
-        h2
-        {
-            flex: 2;
-            margin: 0;
-            padding: 0;
-            font-size: 100%;
-        }
-
-        .meta
-        {
-            display: flex;
-            justify-content: space-around;
-            flex: 1;
-        }
-    }
-
-    .content
-    {   /* Setting to the main content of a card 
-        flex: 1;     
-
-        img
-        {
-            object-fit: none;
-            object-position: 0 50%;
-        }
-
-        p
-        {
-            padding: $standardpadding;
-            flex: 1;
-        }
-    }
-
-    footer
-    {   /* Setting to the additional info of a card 
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        padding: $standardpadding;
-
-        span
-        {
-            font-size: 1.3em;
-        }
-    }
-
-    @include breakpoint('large')
-    {   /* Change card size settings on medium screens 
-        @include cardgrowth(5);
-    }
-
-    &:nth-child(4)
-    {   /* Change local card colors 
-        @include printcard(#ff9, #696);
-    }
-}*/

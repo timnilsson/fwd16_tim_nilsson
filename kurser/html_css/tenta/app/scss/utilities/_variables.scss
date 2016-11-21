@@ -1,10 +1,3 @@
-/// Standard padding on most divs
-$standardpadding: 5px;
-/// Page may not get larger than this
-$maxbodywidth: 1000px;
-/// Total number of cards
-$cardnumber: 10;
-
 /// Sass map of colors
 $colors:
 (
@@ -13,8 +6,8 @@ $colors:
     collectiontext: red,
     linkdark: #000,
     shadow: #000,
-    headers: #000,
-    menubg: #669,
+    headers: #333,
+    menubg: #66f,
     pricehead: #00f,
     border: #f00,
     parabg: darkorange,
@@ -25,4 +18,15 @@ $colors:
 $breakpoints:
 (
     large: 32.188em
+);
+
+/// Sass map of different card colors
+$cardcolor:
+(
+    c1: #38a,
+    c2: #8a3,
+    c3: #a38,
+    c4: #3a8,
+    c5: #83a,
+    c6: #a83
 );

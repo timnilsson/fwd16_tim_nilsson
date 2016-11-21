@@ -17,8 +17,12 @@
     }
 }
 
+/// Sets a border on cards withing a certain range
+/// @param {int} $start - what card it should start to loop from
+/// @param {int} $end - until wich card it should loop 
 @mixin cardborder($start, $end)
 {
+    /// Loop trough the specified cards
     @for $i from $start through $end
     {
         &:nth-child(#{$i}) 
@@ -51,28 +55,22 @@
     }
 }
 
-/// Printing out standard cards, with the possibility to change the colors
-/// Printing out standard cards, with the possibility to change the colors
-/// @param {Hex color value} $color [map-get($colors, cardtext)] - requested color, or take a default value
-/// @param {Hex color value} $bgcolor [map-get($colors, cardbg)] - requested background color, or take a default value
-@mixin printcard($start)
+/// Printing standard settings to cards
+@mixin printcard()
 {
     @extend %cardbase;
-    
-    @include cardgrowth($start);
-    
 }
 
-/// Changes the opacity on all the cards
-/// @param {opacity} $opacity - Requested opacity
-@mixin seetrough($opacity)
+/// Changes background on some cards
+/// @param {int} $cardnumber - Number of cards to loop
+@mixin colorcard($cardnumber)
 {
-    /// Loop trough all the cards
+    /// Loop trough the number of cards specified
     @for $i from 1 through $cardnumber
     {
         &:nth-child(#{$i})
         {
-            opacity: $opacity;
+            background-color: map-get($cardcolor, c#{$i});
         }
     }
 }

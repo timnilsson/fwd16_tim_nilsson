@@ -11,7 +11,7 @@
         flex-flow: row wrap;
         align-items: baseline;
         align-self: center;
-        /*text-shadow: -1px -1px 2px map-get($colors, shadow);*/
+        text-shadow: -1px -1px 1px map-get($colors, shadow);
         
         i
         {
@@ -40,10 +40,4 @@
                 width: auto;
         }
     }
-
-    @include breakpoint(large)
-    {
-        box-shadow: 0 1px 3px map-get($colors, linkdark);
-    }
-
 }

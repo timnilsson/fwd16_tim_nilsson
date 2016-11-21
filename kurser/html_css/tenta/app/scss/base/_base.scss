@@ -5,8 +5,7 @@
 
 body
 {   /* Settings rules for the whole site */
-    @include bgimg('../images/South-Africa-Safari.jpg');
-    
+    @include bgimg('../images/South-Africa-Safari.jpg'); 
 }
 
 body>header
@@ -38,4 +37,5 @@ img
 label
 {
     cursor: pointer;
+    display: block;
 }
