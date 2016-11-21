@@ -29,6 +29,16 @@
     }
 }
 
+/// Set background-image and its properties
+/// @param {url} $url - link to the image
+@mixin bgimg($url)
+{
+    background-image: url($url);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 /// Increasing the width on some of the cards
 /// @param {int} $startnumber - from what startnumber it should start rezising
 @mixin cardgrowth($startnumber)
@@ -45,16 +55,12 @@
 /// Printing out standard cards, with the possibility to change the colors
 /// @param {Hex color value} $color [map-get($colors, cardtext)] - requested color, or take a default value
 /// @param {Hex color value} $bgcolor [map-get($colors, cardbg)] - requested background color, or take a default value
-@mixin printcard($color:map-get($colors, landlinkbg), $bgcolor:map-get($colors, collectiontext))
+@mixin printcard($start)
 {
     @extend %cardbase;
-    color: $color;
-    background-color: $bgcolor;
-
-    header
-    {
-        background-color: brightenColor($bgcolor);
-    }
+    
+    @include cardgrowth($start);
+    
 }
 
 /// Changes the opacity on all the cards
@@ -71,13 +77,5 @@
     }
 }
 
-/// Set background-image and its properties
-/// @param {url} $url - link to the image
-@mixin bgimg($url)
-{
-    background-image: url($url);
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+
 

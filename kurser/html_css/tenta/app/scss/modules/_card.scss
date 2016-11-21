@@ -38,8 +38,7 @@
 
     .secondflex
     {
-        padding: 10px;
-        color: map-get($colors, border);
+        
 
         .card2
         {
@@ -65,16 +64,9 @@
             }
 
             @include cardborder(3, 4);
-
-            @include breakpoint(large)
-            {
-                display: flex;
-                flex-flow: column wrap;
-                align-items: flex-start;
+            @include printcard(2);
                 
-                @include cardgrowth(2);
-                
-            }
+            
         }
 
         @include breakpoint(large)

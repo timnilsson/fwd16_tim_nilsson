@@ -2,7 +2,7 @@
 {   
     display: flex;
     flex-flow: column wrap;
-    
+    box-shadow: 0 1px 3px map-get($colors, linkdark);
     padding: 10px;
 
     .info
@@ -43,7 +43,7 @@
 
     @include breakpoint(large)
     {
-        box-shadow: 0 1px map-get($colors, linkdark);
+        box-shadow: 0 1px 3px map-get($colors, linkdark);
     }
 
 }

@@ -4,7 +4,6 @@
     background-color: map-get($colors, menubg);
     color: map-get($colors, collectionbg);
     padding: 5px;
-    width: 100%;
 
     a
     {
@@ -17,14 +16,12 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
-        background-color: map-get($colors, landlinkbg);
+        background: none;
 
         li
         {
+            padding: 5px;
             
-                padding: 5px;
-            
-
             &:nth-child(6)
             {
                 margin-left: auto;

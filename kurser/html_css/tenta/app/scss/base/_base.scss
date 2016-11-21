@@ -12,6 +12,7 @@ body
 body>header
 {   /* Settings to main header content */
     background-color: map-get($colors, landlinkbg);
+    background-image: url('../images/binding-dark.png');
 }
 
 ul, li, h1, h2, h3, h4, h5, h6, p

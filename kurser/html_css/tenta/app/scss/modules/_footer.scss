@@ -1,0 +1,27 @@
+#bottom
+{   /* How to layout the items in the footer */
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 10px 0;
+    color: map-get($colors, collectionbg);
+    background-color: map-get($colors, landlinkbg);
+    background-image: url('../images/binding-dark.png');
+    box-shadow: 0 -1px 3px map-get($colors, linkdark);
+
+    a
+    {
+        color: map-get($colors, collectionbg);
+    }
+
+    ul
+    {
+        margin: 10px 0;
+    }
+
+    @include breakpoint(large)
+    {   /* Flow the items in a row on bigger screens */
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+}
