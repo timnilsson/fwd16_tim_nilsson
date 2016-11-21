@@ -14,12 +14,17 @@
         {
             margin-top: 10px;
             border: 1px solid map-get($colors, border);
-            border-radius: 300px;
+            border-radius: 500px;
             padding: 2em;
             text-align: center;
             h2
             {
                 color: map-get($colors, pricehead);
+                font-size: 0.8em;
+                @include breakpoint(large)
+                {
+                    font-size: 1.3em;
+                }
             }
 
             img
