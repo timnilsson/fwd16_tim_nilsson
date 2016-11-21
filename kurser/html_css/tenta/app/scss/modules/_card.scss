@@ -22,6 +22,11 @@
                 color: map-get($colors, pricehead);
             }
 
+            img
+            {
+                height: 50px;
+            }
+
             @include colorcard(3);
 
             @include breakpoint(large)
