@@ -1,0 +1,31 @@
+#menu
+{   /* Settings for the menuwrapper and some of its content */
+    display: none;
+    background-color: map-get($colors, menubg);
+    color: map-get($colors, collectionbg);
+    padding: 5px;
+
+    a
+    {
+        color: map-get($colors, collectionbg);
+    }
+
+    @include breakpoint(large)
+    {
+        display: block;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        background: none;
+
+        li
+        {
+            padding: 5px;
+            
+            &:nth-child(6)
+            {
+                margin-left: auto;
+            }
+        }
+    }
+}

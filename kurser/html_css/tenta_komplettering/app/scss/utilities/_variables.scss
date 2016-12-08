@@ -1,0 +1,32 @@
+/// Sass map of colors
+$colors:
+(
+    landlinkbg: #916c55,
+    collectionbg: white,
+    collectiontext: red,
+    linkdark: #000,
+    shadow: #000,
+    headers: #333,
+    menubg: #66f,
+    pricehead: #00f,
+    border: #f00,
+    parabg: darkorange,
+    specborder: #ec4970
+);
+
+/// Sass map for breakpoints
+$breakpoints:
+(
+    large: 32.188em
+);
+
+/// Sass map of different card colors
+$cardcolor:
+(
+    c1: #38a,
+    c2: #8a3,
+    c3: #a38,
+    c4: #3a8,
+    c5: #83a,
+    c6: #a83
+);

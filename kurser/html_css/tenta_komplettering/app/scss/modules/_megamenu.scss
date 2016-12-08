@@ -1,0 +1,32 @@
+/* How to treat the megamenu itself */
+.megamenu
+{
+    padding-left: 10px;
+    background-color: map-get($colors, menubg);
+
+    li a
+    {
+        padding-left: 20px;
+        color: map-get($colors, collectionbg);
+    }
+
+    @include breakpoint(large)
+    {
+        display: none;
+        flex-flow: row wrap;
+        position: absolute;
+        left: 5%;
+        top: 113px;
+        width: 90%;
+
+        ul
+        {
+            flex: 1 1 25%;
+            
+            &:last-child
+            {
+                flex: 1 1 33%;
+            }
+        }
+    }
+}

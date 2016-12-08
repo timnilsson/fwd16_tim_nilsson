@@ -1,0 +1,79 @@
+/// Prints a media query based on the input width
+/// @param {int} $width - input width value to be tested
+@mixin breakpoint($width)
+{
+    /// Check if value exists
+    @if map-has-key($breakpoints, $width)
+    {
+        @media all and(min-width: map-get($breakpoints, $width))
+        {
+            @content;
+        }
+    }
+
+    @else 
+    {
+        @warn "There is no such breakpoint";
+    }
+}
+
+/// Sets a border on cards withing a certain range
+/// @param {int} $start - what card it should start to loop from
+/// @param {int} $end - until wich card it should loop 
+@mixin cardborder($start, $end)
+{
+    /// Loop trough the specified cards
+    @for $i from $start through $end
+    {
+        &:nth-child(#{$i}) 
+        {
+            border-radius: 10px;
+            border: 2px solid map-get($colors, specborder);
+        }
+    }
+}
+
+/// Set background-image and its properties
+/// @param {url} $url - link to the image
+@mixin bgimg($url)
+{
+    background-image: url($url);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/// Increasing the width on some of the cards
+/// @param {int} $startnumber - from what startnumber it should start rezising
+@mixin cardgrowth($startnumber)
+{
+    flex: 0 1 33%;
+
+    &:nth-child(#{$startnumber}n)
+    {
+        flex: 0 1 66%;
+    }
+}
+
+/// Printing standard settings to cards
+@mixin printcard()
+{
+    @extend %cardbase;
+}
+
+/// Changes background on some cards
+/// @param {int} $cardnumber - Number of cards to loop
+@mixin colorcard($cardnumber)
+{
+    /// Loop trough the number of cards specified
+    @for $i from 1 through $cardnumber
+    {
+        &:nth-child(#{$i})
+        {
+            background-color: map-get($cardcolor, c#{$i});
+        }
+    }
+}
+
+
+

@@ -1,0 +1,41 @@
+*, *:after, *:before
+{   /* Set border box on all elements */
+    box-sizing: border-box;
+}
+
+body
+{   /* Settings rules for the whole site */
+    @include bgimg('../images/South-Africa-Safari.jpg'); 
+}
+
+body>header
+{   /* Settings to main header content */
+    background-color: map-get($colors, landlinkbg);
+    background-image: url('../images/binding-dark.png');
+}
+
+ul, li, h1, h2, h3, h4, h5, h6, p
+{   /* Set start margin and padding for many elements */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a
+{   /* Standard link setting */
+    display: block;
+    text-decoration: none;
+    color: map-get($colors, linkdark);
+}
+
+img
+{   /* How to treat images per default */
+    max-width: 100%;
+    height: auto;
+}
+
+label
+{
+    cursor: pointer;
+    display: block;
+}

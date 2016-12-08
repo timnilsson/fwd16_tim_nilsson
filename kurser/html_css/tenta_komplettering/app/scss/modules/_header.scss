@@ -1,0 +1,43 @@
+#top
+{   
+    display: flex;
+    flex-flow: column wrap;
+    box-shadow: 0 1px 3px map-get($colors, linkdark);
+    padding: 10px;
+
+    .info
+    {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: baseline;
+        align-self: center;
+        text-shadow: -1px -1px 1px map-get($colors, shadow);
+        
+        i
+        {
+            margin-right: 5px;
+            font-size: 1.5em;
+        }
+
+        h1, h2, i
+        {
+            color: rgba(map-get($colors, headers), 0.6);
+        }
+
+        h1
+        {
+            font-size: 1.3em;
+        }
+
+        h2
+        {
+            font-size: 1em;
+        }
+
+        img
+        {
+                height: 50px;
+                width: auto;
+        }
+    }
+}

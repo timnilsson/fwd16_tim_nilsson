@@ -1,0 +1,102 @@
+#cardwrapper
+{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    
+    .firstflex
+    {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        
+        .card1
+        {
+            margin-top: 10px;
+            border: 1px solid map-get($colors, border);
+            border-radius: 500px;
+            padding: 2em;
+            text-align: center;
+            h2
+            {
+                color: map-get($colors, pricehead);
+                font-size: 0.8em;
+                @include breakpoint(large)
+                {
+                    font-size: 1.3em;
+                }
+            }
+
+            img
+            {
+                height: 50px;
+            }
+
+            @include colorcard(3);
+
+            @include breakpoint(large)
+            {
+                flex: 0 1 32%;
+            }
+        }
+
+        @include breakpoint(large)
+        {
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: stretch;
+        }
+    }
+
+    .secondflex
+    {
+        @include printcard();
+
+        .card2
+        {
+            display: flex;
+            flex-flow: column wrap;
+            align-items: flex-start;
+            margin-top: 10px;
+            padding: 10px;
+
+            h2:before 
+            {
+                content: '- Kill this poacher - REWARD $';
+            }
+
+            p
+            {
+                padding: 10px;
+                background-color: map-get($colors, parabg);
+                color: map-get($colors, collectionbg);
+                flex: 1;
+            }
+
+            a
+            {
+                color: map-get($colors, border);
+            }
+
+            @include colorcard(6);
+            @include cardborder(3, 4);
+
+            @include breakpoint(large)
+            {
+                @include cardgrowth(2);
+            }
+                
+            
+        }
+        
+        @include breakpoint('large')
+        {
+            
+            flex-flow: row wrap;
+            justify-content: space-around;
+            
+        }   
+    
+    }
+
+}
