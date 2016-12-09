@@ -4,6 +4,8 @@
     flex-flow: column wrap;
     box-shadow: 0 1px 3px map-get($colors, linkdark);
     padding: 10px;
+    position: fixed;
+    width: 100%;
 
     .info
     {
