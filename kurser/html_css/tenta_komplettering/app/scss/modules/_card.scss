@@ -9,7 +9,6 @@
         display: flex;
         flex-flow: column wrap;
         align-items: center;
-        margin-top: 115px;
         
         .card1
         {
@@ -46,6 +45,7 @@
             flex-flow: row wrap;
             justify-content: space-around;
             align-items: stretch;
+            margin-top: 115px;
         }
     }
 
