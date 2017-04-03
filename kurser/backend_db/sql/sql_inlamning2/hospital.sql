@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 02, 2017 at 07:44 PM
+-- Generation Time: Apr 03, 2017 at 10:25 AM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.0.13
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `hospital`
 --
+CREATE DATABASE IF NOT EXISTS `hospital` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `hospital`;
 
 DELIMITER $$
 --
