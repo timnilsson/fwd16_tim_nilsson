@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 03, 2017 at 10:25 AM
+-- Generation Time: Apr 03, 2017 at 11:11 AM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.0.13
 
@@ -26,6 +26,20 @@ DELIMITER $$
 --
 -- Procedures
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `displayDiagnoses`()
+BEGIN
+SELECT diagnos.name AS "Diagnosis", COUNT(*) AS "Number of patients"
+FROM diagnos
+LEFT JOIN patientdiagnos ON patientdiagnos.diagnosID = diagnos.diagnosID
+GROUP BY diagnos.diagnosID;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `numberOfPatients`()
+BEGIN
+SELECT COUNT(*) AS "Totalt amount of patients"
+FROM patient;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `patientsWithDiagnos`(IN `diagnosName` VARCHAR(255))
 BEGIN
 SELECT COUNT(*) AS "Number of patient"
@@ -49,6 +63,13 @@ FROM patientnurse
 LEFT JOIN nurse ON patientnurse.nurseID = nurse.nurseID
 LEFT JOIN patient ON patientnurse.patientID = patient.patientID
 WHERE patientnurse.patientID = patientNumber;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `whoHasDoctor`()
+BEGIN
+SELECT patient.firstName AS "Patient first name", patient.lastName AS "Patient last name"
+FROM patient
+WHERE patient.doctorID IS NOT NULL;
 END$$
 
 DELIMITER ;
