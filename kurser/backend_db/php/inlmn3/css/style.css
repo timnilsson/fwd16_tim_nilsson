@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #ddf;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+#top {
+    padding-left: 2%;
+}
+
+#top a {
+    padding: 10px;
+    font-size: 16pt;
+    color: #fff;
+    background-color: #6c8;
+    border: 1px solid #000;
+}
+
+#top a:hover {
+    background-color: #7d9;
+    border-color: #fff;
+}
+
+main {
+    margin-top: 1em;
+    padding-left: 2%;
+    max-width: 97%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.gamecard {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 0 0 33%;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    border: 1px solid #000;
+}
+
+.headinfo {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0.7em;
+    
+}
+
+.headinfo span {
+    flex: 8;
+    font-weight: bold;
+    padding: 0;
+}
+
+.headinfo a {
+    flex: 1;
+    color: #633;
+}
+
+main p{
+    padding: 0.5em;
+    flex: 4;
+    height: 100%;
+    border-top: 1px solid #888;
+}
+
+.extrainfo {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: #ccf;
+    border-top: 1px solid #888;
+    
+}
+
+.extrainfo a{
+    color: #363;
+}
+
+.extrainfo a, span {
+    padding: 0.5em;
+}
+
+.extrainfo:last-child {
+    flex-basis: 100%;
+}
+
+#subbtn {
+    padding: 1em;
+    color: #fff;
+    background-color: #330;
+}
+
+.emptyfield {
+    color: red;
+}
