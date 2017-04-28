@@ -21,7 +21,7 @@ if (empty($_SESSION['email'])) {
         
         <a href="aeroplaneAdd.php">Add new aeroplane</a>
         <span> | </span>
-        <a href="aeroplaneMakerAdd.php">Add new aeroplane maker</a>
+        <a href="aeroplaneMaker.php">Add new aeroplane maker</a>
         </br>
         <a href="logout.php">Log out</a>
         
