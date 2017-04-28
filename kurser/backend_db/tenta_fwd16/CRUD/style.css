@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+  }
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.succes {
+    color: green;
+}
+
+.fail {
+    color: red;
+}
+
+.hl {
+    background-color: #eee;
+}
